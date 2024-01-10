@@ -176,21 +176,9 @@ input[type=text],input[type=email]
     border: 2px solid black;
     transition: 0.2m all;
 }
-.user
-{
-    position: relative;
-}
 label
 {
-    position: absolute;
-    left: 0px;
-    padding: 10px;
-}
- input:focus,input:valid .user>label
-{
-  transform: translateY(20px);
-  padding: 10px;
-  color: #000;
+  font-size:20px;
 }
 footer
 {
