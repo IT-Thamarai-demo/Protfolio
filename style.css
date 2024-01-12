@@ -93,7 +93,7 @@ main{
     background-color: rgb(240, 234, 234);
     border-radius: 50%;
     border: 10px solid white;
-   
+    
     overflow: hidden;
 }
 .pic img
@@ -162,6 +162,9 @@ section
     height: 350px;
     /* background-color: blueviolet; */
     text-align: center;
+ 
+   
+    margin-top: -1em;
 }
 
 input[type=text],input[type=email]
@@ -203,14 +206,22 @@ footer i
     text-align: center;
     margin-top: 4px;
     margin-left: px;
-    color: black;
+    /* color: black; */
 }
-footer .col{
+span
+{
+    display: flex;
+}
+
+.col{
     height: 50px;
     width: 50px;
     text-align: center;
     border-radius: 100%;
    background-color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 
 }
 .col
@@ -218,11 +229,15 @@ footer .col{
    animation: load 10s infinite;
 
 }
+
+
 @keyframes load {
     0%{
-        transform: translateY(-50px);
+        transform: rotate(360deg);
+        transform: translateX(-50px);
         opacity: 0;
         color: aqua;
+        background-color: black;
     }
     50%
     {
@@ -231,9 +246,10 @@ footer .col{
     }
    100%
    {
-    transform: translateY(0px);
-  
+    transform: translateX(0px);
+    background-color: gray;
     opacity: 1;
+    transform: rotate(360deg);
    }
 }
 body
@@ -241,15 +257,27 @@ body
     background-color: black;
     color: white;
 }
-#C{
-    color: yellow;
-    overflow: hidden;
-    width: 0ch;
+#c
+{
+    font-weight: 600;
     white-space: nowrap;
-    border-left: 2px solid grey;
-    animation: dem 8s steps(20) infinite;
-    transition: all 2s
-};
+    overflow: hidden;
+    width:0ch;
+    animation: come 7s steps(20)  infinite ;
+
+    border-left: 2px solid yellow;
+
+}
+@keyframes come {
+    0%
+    {
+        width: 0ch;    
+    }
+    100%
+    {
+        width: 16ch;
+    }
+}
 @keyframes dem {
      from
      {
@@ -265,6 +293,7 @@ form
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
   
 progress
@@ -286,6 +315,7 @@ h1
 @media only screen and (max-width: 600px) {
     header{
       flex-direction: column;
+     
     
      
     }
@@ -324,8 +354,7 @@ h1
         align-items: center;
         text-align: center;
     }
-  
-   
+
   }
 
 
@@ -337,3 +366,27 @@ h1
   .mall{
     background-color: mediumseagreen;
   }
+  footer i:first
+  {
+   color: blue;
+  }
+.spinner
+{
+
+    border: 2px slid blue;
+    border-top: 10px solid green;
+    border-radius: 100%;
+    animation: role 8s infinite;
+    height: auto;
+    width: auto;
+}
+@keyframes role {
+    0%
+    {
+        transform: rotate(360deg);
+    }
+    100%
+    {
+        transform: rotate(0deg);
+    }
+}
