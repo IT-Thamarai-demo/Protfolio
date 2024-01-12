@@ -162,7 +162,8 @@ section
     height: 350px;
     /* background-color: blueviolet; */
     text-align: center;
- 
+    display: flex;
+    flex-direction: column;
    
     margin-top: -1em;
 }
