@@ -99,7 +99,7 @@ main{
     
 }
 .small h1{
-    animation: fadein 5s infinite  ;
+/*     animation: fadein 5s infinite  ; */
     text-shadow:10px 10px 10px 10px solid yellow;
 }
 .pic
