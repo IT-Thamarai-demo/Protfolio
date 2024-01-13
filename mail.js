@@ -25,7 +25,7 @@ function sendMail() {
     var paras={
         name:document.getElementById("name").value,
         email:document.getElementById("email").value,
-        messege:document.getElementById("Messege").value
+        messege:document.getElementById("messege").value
 
     };
     console.log(paras);
@@ -37,7 +37,7 @@ emailjs.send(serviceid,templateid,paras)
 .then((res)=>{
         document.getElementById("name").value="";
         document.getElementById("email").value="";
-        document.getElementById("Messege").value="";
+        document.getElementById("messege").value="";
         console.log(res);
         alert("messege send SucessFully")
 })
