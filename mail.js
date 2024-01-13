@@ -1,5 +1,5 @@
 
-let name1=document.querySelector("#c")
+
 let body=document.querySelector("body");
 let btn1=document.querySelector("#change");
 console.log(btn1);
@@ -12,13 +12,13 @@ console.log(btn1);
        })
        setInterval(() => {
             name1.textContent="Free Lancer";
-       }, 1000);
+       }, 10000);
        setInterval(() => {
            name1.textContent="Web Desinnger";
-       }, 2000);
+       }, 20000);
        setInterval(() => {
            name1.textContent="Content Createar";
-       }, 3000);
+       }, 30000);
         
 
 function sendMail() {
@@ -44,4 +44,3 @@ emailjs.send(serviceid,templateid,paras)
 .catch((err => console.log(err) ))
 }
 console.log("called");
-
