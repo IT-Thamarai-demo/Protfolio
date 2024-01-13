@@ -1,4 +1,4 @@
-
+let name1=document.querySelector("#c");
 
 let body=document.querySelector("body");
 let btn1=document.querySelector("#change");
@@ -43,7 +43,7 @@ emailjs.send(serviceid,templateid,paras)
 })
 .catch((err => console.log(err) ))
 }
-console.log("called");
+console.log("​🇼​​🇪​​🇱​​🇨​​🇴​​🇲​​🇪​ ​🇹​​🇴​ ​🇲​​🇾​ ​🇵​​🇷​​🇴​​🇹​​🇫​​🇴​​🇱​​🇮​​🇴​");
 let by=()=>
       {
         alert("𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝗧𝗼 𝗠𝘆 𝗣𝗿𝗼𝘁𝗳𝗼𝗹𝗶𝗼")
