@@ -44,3 +44,8 @@ emailjs.send(serviceid,templateid,paras)
 .catch((err => console.log(err) ))
 }
 console.log("called");
+let by=()=>
+      {
+        alert("Welcome To My Page")
+
+      }
