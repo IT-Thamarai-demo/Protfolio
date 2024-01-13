@@ -12,13 +12,13 @@ console.log(btn1);
        })
        setInterval(() => {
             name1.textContent="Free Lancer";
-       }, 10000);
+       }, 1000);
        setInterval(() => {
            name1.textContent="Web Desinnger";
-       }, 20000);
+       }, 2000);
        setInterval(() => {
            name1.textContent="Content Createar";
-       }, 30000);
+       }, 3000);
         
 
 function sendMail() {
