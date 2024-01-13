@@ -96,19 +96,21 @@
             
         </div>
         <br>
-        <div class="contactus">
+         <div class="contactus">
             <h1>Contact us</h1><br>
-            <form action="">
+            <form >
                     <label for="name">Name :</label>
                     <br>
-                    <input type="text" name="name" id="name" required>
+                    <input type="text" name="name" id="name" placeholder="Enter yout Full Name" required>
                     <br>
                     <label for="name">Email :</label>
                     <br>
-                    <input type="email" name="email" id="email" required>
+                    <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
                     <br>
-                <button class="edit1">Send</button>
-            </form>
+                    <label for="Send Some Messege ">Send Some Messege :</label>
+                    <textarea type="input" name="Messege" id="Messege" placeholder="Send The Messege" required></textarea>
+                <button class="edit1" onclick="sendMail()">Send</button>
+            </form> 
             
         </div>
     </section>
