@@ -231,7 +231,7 @@ section
     margin-top: -1em;
 }
 
-input[type=text],input[type=email]
+input[type=text],input[type=email],textarea
 {
     padding: 10px;
     outline: none;
@@ -241,6 +241,10 @@ input[type=text],input[type=email]
 input:hover
 {
     border: 5px solid gray;
+}
+textarea:hover
+{
+         border: 5px solid gray;
 }
 
 label
