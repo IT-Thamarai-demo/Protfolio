@@ -43,9 +43,19 @@ emailjs.send(serviceid,templateid,paras)
 })
 .catch((err => console.log(err) ))
 }
-console.log("🆆🅴🅻🅲🅾🅼🅴 🆃🅾 🅼🆈 🅿🆁🅾🆃🅵🅾🅻🅸🅾");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+            icon.classList.add("active")
+
+        }
+        else {
+            icon.classList.remove("active")
+        }
+
+    })
 function along() {
-   window.scrollTo(0,0);
+     window.scrollTo(0,0)
 }
 let by=()=>
       {
