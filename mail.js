@@ -44,6 +44,9 @@ emailjs.send(serviceid,templateid,paras)
 .catch((err => console.log(err) ))
 }
 console.log("🆆🅴🅻🅲🅾🅼🅴 🆃🅾 🅼🆈 🅿🆁🅾🆃🅵🅾🅻🅸🅾");
+function along() {
+   window.scrollTo(0,0);
+}
 let by=()=>
       {
         alert("𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝗧𝗼 𝗠𝘆 𝗣𝗿𝗼𝘁𝗳𝗼𝗹𝗶𝗼")
