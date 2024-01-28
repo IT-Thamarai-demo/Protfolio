@@ -14,10 +14,10 @@ console.log(btn1);
             name1.textContent="Free Lancer";
        }, 10000);
        setInterval(() => {
-           name1.textContent="Web Desinnger";
+           name1.textContent="Web Desinger";
        }, 20000);
        setInterval(() => {
-           name1.textContent="Content Createar";
+           name1.textContent="Content Creator";
        }, 30000);
         
 
