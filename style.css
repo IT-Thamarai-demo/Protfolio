@@ -421,8 +421,10 @@ h1
         align-items: center;
         text-align: center;
     }
-    
-
+    .scroll
+    {
+       left:50%
+    } 
   }
 
 
@@ -434,10 +436,7 @@ h1
   .mall{
     background-color: mediumseagreen;
   }
-  footer i:first
-  {
-   color: blue;
-  }
+
 .spinner
 {
 
