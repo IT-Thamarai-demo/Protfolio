@@ -421,6 +421,7 @@ h1
         align-items: center;
         text-align: center;
     }
+    
 
   }
 
@@ -454,7 +455,7 @@ h1
     width: 50px;
     background-color: blueviolet;
     border-radius: 50%;
-    position: absolute;
+    position: fixed;
     left:80%;
 }
 .scroll i
