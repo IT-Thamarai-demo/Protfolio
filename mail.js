@@ -21,30 +21,30 @@ setInterval(() => {
 }, 30000);
 
 
-function sendMail() {
-    var paras = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        messege: document.getElementById("Messege").value
+// function sendMail() {
+//     var paras = {
+//         name: document.getElementById("name").value,
+//         email: document.getElementById("email").value,
+//         messege: document.getElementById("Messege").value
 
-    };
-    console.log(paras);
-    const serviceid = "service_f61kjpb";//service_f61kjpb
-    const templateid = "template_xejkctk";//template_xejkctk
+//     };
+//     console.log(paras);
+//     const serviceid = "service_f61kjpb";//service_f61kjpb
+//     const templateid = "template_xejkctk";//template_xejkctk
 
 
-    emailjs.send(serviceid, templateid, paras)
-        .then((res) => {
-            document.getElementById("name").value = "";
-            document.getElementById("email").value = "";
-            document.getElementById("Messege").value = "";
-            alert("messege send SucessFully")
-            console.log(res);
+//     emailjs.send(serviceid, templateid, paras)
+//         .then((res) => {
+//             document.getElementById("name").value = "";
+//             document.getElementById("email").value = "";
+//             document.getElementById("Messege").value = "";
+//             alert("messege send SucessFully")
+//             console.log(res);
 
-        })
-        .catch((err => console.log(err)))
+//         })
+//         .catch((err => console.log(err)))
 }
-console.log("called");
+
 let by = () => {
     alert("Welcome To My Page   ")
 }
