@@ -44,14 +44,14 @@ emailjs.send(serviceid,templateid,paras)
 .catch((err => console.log(err) ))
 }
 
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 400) {
-            icon.classList.add("active")
+    // window.addEventListener("scroll", () => {
+    //     if (window.scrollY > 400) {
+    //         icon.classList.add("active")
 
-        }
-        else {
-            icon.classList.remove("active")
-        }
+    //     }
+    //     else {
+    //         icon.classList.remove("active")
+    //     }
 
     })
 function along() {
