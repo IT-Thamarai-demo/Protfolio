@@ -478,6 +478,8 @@ h1
     animation: jail 5s  linear;
     animation-timeline: scroll(root);
     border-radius: 10px;
+    position:fixed;
+    top:0;
 
 }
 @keyframes jail
