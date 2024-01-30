@@ -477,7 +477,7 @@ h1
     background-color: rgb(223, 223, 240);
     animation: jail 5s  linear;
     animation-timeline: scroll(root);
-    border-radius: 10px;
+    border-radius: 1%;
     position:fixed;
     top:0;
      transition: 0.2ms all;
