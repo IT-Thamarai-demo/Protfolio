@@ -480,6 +480,7 @@ h1
     border-radius: 10px;
     position:fixed;
     top:0;
+     transition: 0.2ms all;
 
 }
 @keyframes jail
@@ -495,4 +496,7 @@ h1
         background-color: yellow;
     }
 }
-
+body
+{
+     transition: 0.2ms all;
+}
