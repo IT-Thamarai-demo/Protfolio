@@ -164,6 +164,16 @@ function along() {
     document.body.scrollTop=0;
     document.documentElement.scrollTop=0;
 }
+  window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+            icon.classList.add("active")
+
+        }
+        else {
+            icon.classList.remove("active")
+        }
+
+    })
 
   </script>
 </body>
