@@ -192,18 +192,20 @@
 
         })
         let t = document.querySelector("#time")
-        let currentTime = new Date().getHours();
+         const date = new Date();
+  const istHours = date.getHours() + 5 + 30/60; // Adjust for IST offset (UTC+05:30)
 
 
-        if (currentTime >= 6 && currentTime < 11) {
-            t.innerHTML = "Good morning!";
-        } else if (currentTime >= 11 && currentTime < 3) {
-            t.innerHTML = "Good afternoon!";
-        } else if (currentTime >= 3 && currentTime < 5) {
-            t.innerHTML = "Good evening!";
-        } else {
-            t.innerHTML = "Good night!";
-        }
+
+  if (istHours < 12) {
+    t.textContent = "Good Morning";
+  } else if (istHours < 17) {
+    t.textContent = "Good Afternoon";
+  } else if (istHours < 20) { 
+    t.textContent "Good Evening";
+  } else {
+    t.textContent = "Gootd Night";
+  }
     </script>
 </body>
 
