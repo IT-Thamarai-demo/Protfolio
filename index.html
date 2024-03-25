@@ -31,6 +31,7 @@
         </div>
         <div class="edit">
             <button class="edit1" id="change">Bankground-Toggle</button>
+            <button class="edit1" onclick="OpenDialog()">open Dialogue</button>
         </div>
     </header>
 
@@ -38,7 +39,7 @@
     <br>
     <main>
         <div class="small">
-            <h1 id="time"></h1>
+
             <h1>Thamarai Kannan</h1>
             <span>I am</span><span id="c">Web Developer</span></h1>
             <p> Hello! I'm a passionate frontend developer<br> love for creating engaging and user-friendly <br> web applications I have a strong foundation in HTML<br> CSS, and JavaScript along with experience in various<br> frontend frameworks and libraries
@@ -101,11 +102,11 @@
         <div class="contactus">
             <h1>Contact us</h1><br>
             <form id="c-form">
-                <label for="name">Entet Your Name :</label>
+                <label for="name">Name :</label>
                 <br>
                 <input type="text" name="name" id="name" placeholder="Enter yout Full Name" required>
                 <br>
-                <label for="name">Enter Your Email :</label>
+                <label for="name">Email :</label>
                 <br>
                 <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
                 <br>
@@ -130,11 +131,25 @@
         <i class="fa-solid fa-circle-up" id="a"></i>
     </div>
 
-
+    <dialog class="dan">
+        <h1 behavior="" direction="">Device Details :</h1>
+        <br>
+        <h1 id="di"></h1>
+        <br>
+        <h1 id="bl">
+            </h4>
+            <br>
+            <h1 id="ct"></h1>
+            <h1 id="time"></h1>
+            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="CLoseDialog()" class="edit1">Close Daialog</button>
+    </dialog>
 
 
 
     <script>
+        let tag = document.querySelector(".dan");
+        console.log(tag);
+
         document.querySelector("#c-form").addEventListener("submit", function(e) {
 
             e.preventDefault();
@@ -191,18 +206,96 @@
             }
 
         })
-        let t = document.querySelector("#time")
-        let currentTime = new Date().getHours();
 
 
-        if (currentTime >= 6 && currentTime <= 11) {
-            t.innerHTML = "Good morning!";
-        } else if (currentTime >= 11 && currentTime <= 3) {
-            t.innerHTML = "Good afternoon!";
-        } else if (currentTime >= 3 && currentTime <= 5) {
-            t.innerHTML = "Good evening!";
+        //openning and closing dialog
+
+        function OpenDialog() {
+            tag.showModal();
+        }
+
+        function CLoseDialog(params) {
+            tag.close();
+        }
+
+        //display current time
+
+
+        let CT = document.querySelector("#ct")
+
+
+        setInterval(() => {
+            const currentTime = new Date();
+
+            const formattedTime = " Current Time is : " + currentTime.toLocaleTimeString();
+
+            CT.innerHTML = formattedTime;
+
+        }, 1000);
+
+
+        //dispaly device information
+
+        let DF = document.querySelector("#di");
+        if (navigator.userAgentData) {
+            const deviceName = navigator.userAgentData.brands[0].brand;
+            DF.innerHTML = " Device name :" + deviceName;
         } else {
-            t.innerHTML = "Good night!";
+            // Fallback to navigator.userAgent for older browsers
+            const userAgent = navigator.userAgent;
+            const match = userAgent.match(/\((.*?)\)/);
+            if (match && match.length > 1) {
+                const deviceInfo = match[1];
+                DF.innerHTML = " Your Device Name Is :" + deviceInfo;
+            } else {
+                DF.innerHTML = " Unable To Find Device :" + deviceInfo;
+            }
+        }
+
+
+
+
+        //display battety information
+        let dis = document.querySelector("#bl");
+
+        // Check if Battery Status API is supported
+        if ('getBattery' in navigator) {
+            navigator.getBattery().then(function(battery) {
+                // Update the battery percentage initially
+                updateBatteryStatus(battery);
+
+                // Update the battery percentage whenever it changes
+                battery.addEventListener('levelchange', function() {
+                    updateBatteryStatus(battery);
+                });
+
+                function updateBatteryStatus(battery) {
+                    // Get the battery percentage
+                    const batteryPercentage = battery.level * 100;
+
+                    // Display the battery percentage
+                    dis.innerHTML = "    Battery Percentage :   " + batteryPercentage + "%";
+                }
+            });
+        } else {
+            dis.innerHTML = " Api is not supported by your battery"
+        }
+        //    good morning
+
+        let goodmorning = document.querySelector("#time")
+
+
+        const now = new Date();
+        const hour = now.getHours();
+
+        if (hour >= 5 && hour < 12) {
+            goodmorning.textContent = "Good morning!";
+        } else if (hour >= 12 && hour < 17) {
+            goodmorning.textContent = "Good afternoon!";
+        } else if (hour >= 17 && hour < 22) {
+            goodmorning.textContent = "Good evening!";
+        } else {
+            goodmorning.textContent = "Good night!";
         }
     </script>
 </body>
