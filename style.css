@@ -478,4 +478,5 @@ iframe {
 
 #show {
     text-align: center;
+        object-fit: cover;
 }
