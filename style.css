@@ -382,9 +382,11 @@ h1 {
     .load {
         display: none;
     }
-    iframe {
+    #map {
         height: 300px;
         width: 300px;
+       position: absolute;
+       right: 38%;
     }
 }
 
@@ -468,15 +470,16 @@ h5 {
     text-wrap: nowrap;
 }
 
-iframe {
+
+#show {
+    text-align: center;
+        object-fit: cover;
+}
+#map {
     height: 400px;
     width: 400px;
     border-radius: 10%;
     border: 2px solid rebeccapurple;
     text-align: center;
-}
-
-#show {
-    text-align: center;
-        object-fit: cover;
+    margin-left: 36%;
 }
