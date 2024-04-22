@@ -179,24 +179,3 @@
 
 
 
-        let map = L.map('map');
-
-        // Initialize the map with user's location
-        if ('geolocation' in navigator) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                var userLat = position.coords.latitude;
-                var userLng = position.coords.longitude;
-
-                map.setView([userLat, userLng],15);
-
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                }).addTo(map);
-
-                var marker = L.marker([userLat, userLng]).addTo(map);
-                marker.bindPopup("<b>Your Location ❤️</b>").openPopup();
-            });
-        } else {
-            alert('Geolocation is not supported by your browser');
-        }
-
