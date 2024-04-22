@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700');
 * {
     margin: 0;
     padding: 0;
@@ -32,6 +33,10 @@ header {
 
 header span {
     color: blue;
+}
+span
+{
+    font-size: 30px;
 }
 
 ul {
@@ -74,7 +79,7 @@ main {
     height: 500px;
 }
 
-.small {
+#small {
     height: 250px;
     width: 600px;
     /* background-color: blue; */
@@ -141,7 +146,7 @@ main {
     font-size: 20px;
 }
 
-.skills {
+#skills {
     height: 400px;
     width: 900px;
     /* background-color: blueviolet; */
@@ -176,9 +181,6 @@ main {
     animation: shad 5s infinite;
 }
 
-.hov:hover {
-    transform: scale(1.2) rotate(12deg);
-}
 
 @keyframes shad {
     to {
@@ -204,7 +206,7 @@ section {
     justify-content: space-around;
 }
 
-.contactus {
+#contactus {
     height: 350px;
     /* background-color: blueviolet; */
     text-align: center;
@@ -353,11 +355,11 @@ h1 {
         flex-direction: column;
         text-align: center;
     }
-    .small p {
+    #small p {
         font-size: 16px;
     }
-    .skills,
-    .contactus {
+    #skills,
+    #contactus {
         flex-direction: column;
         height: 100%;
         text-align: center;
@@ -473,7 +475,7 @@ h5 {
 
 #show {
     text-align: center;
-        object-fit: cover;
+    object-fit: cover;
 }
 #map {
     height: 400px;
@@ -483,3 +485,48 @@ h5 {
     text-align: center;
     margin-left: 36%;
 }
+.menu{
+    padding: 10px;
+    font-family: 'Open Sans Condensed', sans-serif;
+  }
+ 
+
+  .menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  .menu li{
+    display: inline-block;
+    margin: 0 15px;
+  }
+  .menu a{
+    font-size: 22px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    position: relative;
+    padding: 4px 0;
+  }
+  .menu a::before{
+    content: "";
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    transition: 0.5s transform ease;
+    transform: scale3d(0,1,1);
+    transform-origin: 0 50%;
+  }
+  .menu a:hover::before{
+    transform: scale3d(1,1,1);
+  }
+  .menu-3 a::before{
+    transform-origin: 50% 50%;
+    background-color: blue;
+  }
+ 
