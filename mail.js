@@ -16,11 +16,6 @@
 
 // naviagation loggc
 
-        function view(idvalue) {
-            document.getElementById(idvalue).scrollIntoView({
-                behavior: "smooth"
-            })
-        }
         let tag = document.querySelector(".dan");
         console.log(tag);
 // contact form
