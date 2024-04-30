@@ -48,15 +48,6 @@ btn1.addEventListener("click", () => {
     body.classList.toggle("mall")
 
 })
-setInterval(() => {
-    text.textContent = "Free Lancer";
-}, 10000);
-setInterval(() => {
-    text.textContent = "Web Desinnger";
-}, 20000);
-setInterval(() => {
-    text.textContent = "Content Creator";
-}, 30000);
 
 //loading alert
 let by = () => {
@@ -172,3 +163,10 @@ if (hour >= 5 && hour < 12) {
 
 document.querySelector("#hei").textContent = "Device Height  :" + h + "Px"
 document.querySelector("#wei").innerHTML = "Device Width  :" + w + "Px"
+//typing animation
+
+var typed = new Typed('#element', {
+    strings: ['Content Creator 💓 ...' , 'Free Lancer  ...❤️','Web Desinnger  ... 💕'],
+    typeSpeed: 70,
+    loop:true
+  });
