@@ -298,14 +298,7 @@ body {
     color: white;
 }
 
-#c {
-    font-weight: 600;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0ch;
-    animation: come 5s steps(10) infinite;
-    border-left: 2px solid yellow;
-}
+
 
 @keyframes come {
     0% {
