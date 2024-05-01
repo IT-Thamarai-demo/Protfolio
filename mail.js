@@ -170,3 +170,8 @@ var typed = new Typed('#element', {
     typeSpeed: 70,
     loop:true
   });
+ function vibrare(ms)
+  {
+     navigator.vibrate(ms)
+  }
+
