@@ -174,4 +174,14 @@ var typed = new Typed('#element', {
   {
      navigator.vibrate(ms)
   }
+window.addEventListener('load', function () {
+  const loader = document.querySelector('.preloader');
+  const content = document.querySelector('.content');
+
+  setTimeout(function () {
+    loader.style.display = 'none';
+    content.style.display = 'block'; // Show content after preloader is removed
+  }, 2000); // Adjust the time as needed
+});
+
 
