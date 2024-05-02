@@ -392,6 +392,10 @@ h1 {
        position: absolute;
        right: 0%;
     }
+    ul
+    {
+        flex-direction:column;
+    }
 }
 
 .scroll {
