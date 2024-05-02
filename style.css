@@ -148,8 +148,8 @@ main {
 }
 
 #skills {
-    height: 400px;
-    width: 900px;
+     height: 100%;
+    width: 100%;
     /* background-color: blueviolet; */
     display: flex;
     flex-direction: row;
@@ -352,6 +352,10 @@ h1 {
     main {
         flex-direction: column;
         text-align: center;
+    }
+      #small
+    {
+        width: 100%;
     }
     #small p {
         font-size: 16px;
