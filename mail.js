@@ -174,14 +174,28 @@ var typed = new Typed('#element', {
   {
      navigator.vibrate(ms)
   }
-window.addEventListener('load', function () {
-  const loader = document.querySelector('.preloader');
-  const content = document.querySelector('.content');
+document.onreadystatechange = function () {
+  if (document.readyState === "complete") {
+    // Hide the preloader when the page is fully loaded
+    document.querySelector('.preloader').style.display = 'none';
+  }
+};
 
-  setTimeout(function () {
-    loader.style.display = 'none';
-    content.style.display = 'block'; // Show content after preloader is removed
-  }, 2000); // Adjust the time as needed
-});
+function moveProgressBar() {
+  var elem = document.getElementById("progressBar");
+  var width = 1;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++;
+      elem.style.width = width + "%";
+    }
+  }
+}
+
+window.onload = moveProgressBar;
+
 
 
