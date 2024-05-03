@@ -181,7 +181,7 @@ var typed = new Typed('#element', {
     setTimeout(function () {
       loader.style.display = 'none';
       content.style.display = 'block'; // Show content after preloader is removed
-    }, 2000); // Adjust the time as needed
+    }, 1000); // Adjust the time as needed
   });
 
 
