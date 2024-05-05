@@ -396,6 +396,12 @@ h1 {
     {
         flex-direction:column;
     }
+     #map {
+        height: 300px;
+        width: 300px;
+       position: absolute;
+       right: 38%;
+    }
 }
 
 .scroll {
@@ -583,6 +589,14 @@ h5 {
 
 .content {
   display: none; /* Hide content until preloader is removed */
+}
+#map {
+    height: 400px;
+    width: 400px;
+    border-radius: 10%;
+    border: 2px solid rebeccapurple;
+    text-align: center;
+    margin-left: 36%;
 }
 
 
