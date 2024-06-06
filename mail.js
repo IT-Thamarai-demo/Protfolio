@@ -44,10 +44,18 @@ let icon = document.querySelector(".scroll")
 let text = document.querySelector("#c");
 //toggle background colot
 
-btn1.addEventListener("click", () => {
-    body.classList.toggle("mall")
+function demo() {
+  let red = Math.floor(Math.random() * 100);
+  let green = Math.floor(Math.random() * 100);
+  let blue = Math.floor(Math.random() * 100);
+  let random = `rgb(${red},${green},${blue})`;
+  console.log(random);
+ let body= document.querySelector("body")
+ body.style.backgroundColor=random;
+}
 
-})
+
+
 
 //loading alert
 let by = () => {
