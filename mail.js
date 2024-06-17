@@ -208,7 +208,14 @@ var typed = new Typed('#element', {
                 var marker = L.marker([userLat, userLng]).addTo(map);
                 marker.bindPopup("<b>Your Location ❤️</b>").openPopup();
             });
+     
         } else {
             alert('Geolocation is not supported by your browser');
         }
+document.addEventListener("visibilitychange",function demo() {
+        const noti=new Notification("Come back  ❤️",{
+            body:"please come my site 🙏😂",
+            icon:"IMG-20230719-WA0007.jpg"
+        })
+    })
 
