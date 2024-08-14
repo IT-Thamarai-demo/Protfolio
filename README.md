@@ -1,7 +1,7 @@
 # My Portfolio
 
 Welcome to my portfolio! This repository showcases my work and skills. Below are details about the project, its features, and how to use it.
-
+#Developer pic![Alt text](https://it-thamarai-demo.github.io/Protfolio/IMG-20230719-WA0007.jpg)
 ## Features
 
 - **Interactive Map**: Uses [Leaflet.js](https://leafletjs.com/) to track and display device location on a map.
