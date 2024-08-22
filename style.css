@@ -275,9 +275,7 @@ span {
     justify-content: center;
 }
 
-.col {
-    animation: load 5s infinite;
-}
+
 
 @keyframes load {
     0% {
