@@ -395,7 +395,7 @@ h1 {
     }
 
     #map {
-        height: 200px; /* Adjust height for smaller screens */
+         #map height: 200px; /* Adjust height for smaller screens */
         width: 100%;   /* Make the width 100% of the parent container */
         position: static; /* Remove absolute positioning for better flow on small screens */
         right: 0; /* Reset right alignment */
@@ -404,8 +404,8 @@ h1 {
 
 }
 #map {
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
     position: absolute;
    
     /* Default styling for larger screens */
