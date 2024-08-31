@@ -698,6 +698,7 @@ h5 {
     color: #007bff;
   }
 /* Default button styles */
+/* Default button styles */
 .download-btn {
   display: inline-flex;
   align-items: center;
@@ -749,14 +750,15 @@ h5 {
 
 /* Styles when the button is clicked */
 .download-btn.done {
-  background-color: #28a745; /* Change button background color when clicked */
-  color: white; /* Text color when clicked */
+  background-color: #28a745; /* Green color after click */
+  color: white; /* Text color after click */
+  border-color: #28a745; /* Green border after click */
   cursor: default; /* Prevent further clicking */
 }
 
 .download-btn.done i {
-  transform: rotate(0deg) translateY(10px); /* Move the icon down */
-  color: white; /* Change icon color */
+  transform: rotate(0deg) translateY(10px); /* Move icon down */
+  color: white; /* Icon color */
 }
 
 .download-btn.done::after {
@@ -768,8 +770,8 @@ h5 {
   font-size: 14px;
   color: #28a745;
   margin-top: 5px;
-  opacity: 1; /* Ensure visibility */
-  transition: opacity 0.5s ease; /* Smooth transition for appearance */
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
 /* Simple fade-in effect for the text */
