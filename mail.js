@@ -63,10 +63,21 @@ Notification.requestPermission().then((res)=>
         alert("Welcome To My Page ❤️  ")
     }
     
-    function along() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
+   // Function to scroll to the top of the page
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Show or hide the button based on scroll position
+window.addEventListener('scroll', () => {
+    const scrollButton = document.querySelector('.scroll');
+    if (window.scrollY > 300) { // Adjust the value as needed
+        scrollButton.classList.add('show');
+    } else {
+        scrollButton.classList.remove('show');
     }
+});
+
     window.addEventListener("scroll", () => {
         if (window.scrollY > 100) {
             icon.classList.add("active")
