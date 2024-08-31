@@ -759,3 +759,64 @@ h5 {
     }
 }
 
+<style>
+  /* General styles for the section */
+  section {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text for contrast */
+    padding: 20px;
+  }
+
+  /* Styling the skill cards */
+  .card {
+    background-color: #333; /* Dark background for cards */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-10px); /* Elevation effect on hover */
+  }
+
+  .card i {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .card h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+  }
+
+  .card p {
+    margin: 10px 0;
+  }
+
+  .card small {
+    display: block;
+    margin-top: 10px;
+    color: #888;
+  }
+
+  /* Progress bar container */
+  .progress-container {
+    width: 100%;
+    height: 10px;
+    background-color: #555; /* Dark background for the progress bar */
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    height: 100%;
+    background-color: #4caf50; /* Green color for progress */
+    border-radius: 5px;
+    width: 0; /* Start with 0 width */
+    transition: width 1s ease-in-out; /* Animate the width */
+  }
+</style>
