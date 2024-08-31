@@ -699,6 +699,7 @@ h5 {
   }
 /* Default button styles */
 /* Default button styles */
+/* Default button styles */
 .download-btn {
   display: inline-flex;
   align-items: center;
@@ -713,6 +714,7 @@ h5 {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  white-space: nowrap; /* Prevent text from wrapping */
 }
 
 .download-btn i {
@@ -774,19 +776,27 @@ h5 {
   transition: opacity 0.5s ease;
 }
 
-/* Simple fade-in effect for the text */
-@keyframes fadeIn {
-  to {
-    opacity: 1;
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .download-btn {
+    padding: 10px 20px; /* Adjust padding for smaller screens */
+    font-size: 14px; /* Reduce font size */
+  }
+
+  .download-btn i {
+    font-size: 18px; /* Adjust icon size */
   }
 }
 
+@media (max-width: 480px) {
+  .download-btn {
+    padding: 8px 16px; /* Further reduce padding for very small screens */
+    font-size: 12px; /* Further reduce font size */
+    text-align: center; /* Center align text and icon */
+  }
 
-  
-  /* Responsive styling */
-  @media (max-width: 768px) {
-    .item {
-      flex: 1 1 calc(50% - 20px); 
-    }
-    }  
+  .download-btn i {
+    font-size: 16px; /* Further reduce icon size */
+  }
+}
 
