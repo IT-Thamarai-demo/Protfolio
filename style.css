@@ -202,6 +202,7 @@ main {
     text-align: center;
     border: 3px solid white;
     animation: shad 5s infinite;
+    background-color: transparent;
 }
 
 
@@ -682,13 +683,14 @@ h5 {
 
 /* Style for each project card */
 .project-card {
-    background: #fff;
+     background-color: transparent;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px;
     overflow: hidden;
     width: calc(33% - 40px);
     transition: transform 0.3s ease;
+    b
 }
 
 .project-card:hover {
@@ -759,7 +761,7 @@ h5 {
     }
 }
 
-<style>
+
   /* General styles for the section */
   section {
     background-color: #000; /* Black background */
@@ -769,7 +771,7 @@ h5 {
 
   /* Styling the skill cards */
   .card {
-    background-color: #333; /* Dark background for cards */
+   background-color: transparent; /* Dark background for cards */
     border-radius: 8px;
     padding: 20px;
     margin: 10px;
