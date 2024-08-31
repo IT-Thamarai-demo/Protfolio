@@ -240,7 +240,9 @@ Notification.requestPermission().then((res)=>
             AOS.init(); // Initialize AOS animations
         };
 
-
+function downloadCV() {
+    window.location.href = 'Thamarai_Kannan_Front_End_Developer_5_27.pdf';
+}
 
 
 
