@@ -19,9 +19,14 @@ function handlePreloader() {
     }, 2000);
 }
 
+
+
 //your device width and height
-let h = window.innerHeight;
-let w = window.innerWidth;
+let width= window.innerHeight;
+let height = window.innerHeight;
+document.querySelector(".width").textContent=width;
+document.querySelector(".width").textContent=height;
+
 
 // naviagation loggc
 
@@ -83,7 +88,7 @@ window.addEventListener("scroll", () => {
 })
 //get current date
 const date=new Date();
-document.querySelector("#dt").textContent = `Today is  ${date.toLocaleDateString()}`
+document.querySelector(".date").textContent = `Today is  ${date.toLocaleDateString()}`
 
 //openning and closing dialog
 
@@ -98,7 +103,7 @@ function CLoseDialog(params) {
 //display current time
 
 
-let CT = document.querySelector("#ct")
+let CT = document.querySelector(".tome")
 
 
 setInterval(() => {
@@ -113,7 +118,7 @@ setInterval(() => {
 
 //dispaly device information
 
-let DF = document.querySelector("#di");
+let DF = document.querySelector(".browser");
 if (navigator.userAgentData) {
     const deviceName = navigator.userAgentData.brands[0].brand;
     DF.innerHTML = " Device name :" + deviceName;
@@ -133,7 +138,7 @@ if (navigator.userAgentData) {
 
 
 //display battety information
-let dis = document.querySelector("#bl");
+let dis = document.querySelector(".battery");
 
 // Check if Battery Status API is supported
 if ('getBattery' in navigator) {
@@ -159,7 +164,7 @@ if ('getBattery' in navigator) {
 }
 //    good morning
 
-let goodmorning = document.querySelector("#time")
+let goodmorning = document.querySelector(".curremt")
 
 
 const now = new Date();
