@@ -683,7 +683,7 @@ h5 {
 
 /* Style for each project card */
 .project-card {
-     background-color: transparent;
+    
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px;
@@ -722,7 +722,7 @@ h5 {
 }
 
 .btn-view, .btn-github {
-    background: #007bff;
+   
     color: #fff;
     padding: 10px 15px;
     border-radius: 5px;
@@ -764,14 +764,14 @@ h5 {
 
   /* General styles for the section */
   section {
-    background-color: #000; /* Black background */
+  
     color: #fff; /* White text for contrast */
     padding: 20px;
   }
 
   /* Styling the skill cards */
   .card {
-   background-color: transparent; /* Dark background for cards */
+  
     border-radius: 8px;
     padding: 20px;
     margin: 10px;
