@@ -356,7 +356,6 @@ h1 {
       #small
     {
         width: 100%;
-    }
     #small p {
         font-size: 16px;
     }
@@ -433,19 +432,29 @@ h1 {
 .scroll {
     height: 60px;
     width: 60px;
-    background-color: palevioletred;
-    position: absolute;
+    background-color: #ff69b4; /* Pale Violet Red */
+    position: fixed; /* Changed to fixed to stay in view when scrolling */
+    bottom: 20px; /* Position it at the bottom */
+    right: 20px; /* Position it at the right */
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    opacity: 1;
-    pointer-events: fill;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow for a modern effect */
+    opacity: 0; /* Start with hidden */
+    transition: opacity 0.3s; /* Smooth transition for opacity */
 }
 
 .scroll i {
-    font-size: 40px;
+    font-size: 24px; /* Adjusted size for better fit */
+    color: white; /* White icon color */
 }
+
+/* Show the button when the user scrolls down */
+.scroll.show {
+    opacity: 1;
+}
+
 
 html {
     scroll-behavior: smooth;
