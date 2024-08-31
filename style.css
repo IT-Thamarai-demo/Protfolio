@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +13,13 @@
     --name: 35px;
 }
 
+body {
+    background-color: black;
+    color: white;
+    transition: 0.2ms all;
+}
+
+/* Header */
 header {
     width: 100%;
     height: 40%;
@@ -20,61 +28,66 @@ header {
     align-items: center;
     text-align: center;
     font-size: 18px;
-  
-}
-
-@keyframes re {
-    from {
-        transform: translateY(-100px);
-    }
-    to {
-        transform: translate(0px);
-    }
 }
 
 header span {
     color: blue;
-}
-span
-{
     font-size: 30px;
 }
 
-ul {
-    display: flex;
+/* Navigation Menu */
+.menu {
+    padding: 5px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.menu ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
-ul li {
-    padding: 7px 4px;
-    font-size: 20px;
+.menu li {
+    display: inline-block;
+    margin: 0 15px;
 }
 
-.edit1 {
-    padding: 10px;
-    font-size: 1rem;
-    background-color: blue;
-    cursor: pointer;
-    color: #fdfdfd;
-    border: none;
-    border-radius: 10px;
-    outline: none;
-}
-
-a,
-footer .col a {
+.menu a {
+    font-size: 22px;
+    text-transform: uppercase;
     text-decoration: none;
-    color: white;
+    color: #fff;
+    display: block;
+    position: relative;
+    padding: 4px 0;
 }
 
-a:hover {
-    color: blueviolet;
-    text-decoration: double;
+.menu a::before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    transition: 0.5s transform ease;
+    transform: scale3d(0,1,1);
+    transform-origin: 0 50%;
 }
 
+.menu a:hover::before {
+    transform: scale3d(1,1,1);
+}
+
+.menu-3 a::before {
+    transform-origin: 50% 50%;
+    background-color: blue;
+}
+
+/* Main Content */
 main {
     display: flex;
-    text-align: center;
     align-items: center;
     justify-content: space-around;
     margin-top: 30px;
@@ -84,58 +97,17 @@ main {
 #small {
     height: 250px;
     width: 600px;
-    /* background-color: blue; */
     text-align: center;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    justify-content: space-eveny;
+    justify-content: space-evenly;
     animation: fadeach 5s infinite;
     border-radius: 10px;
 }
 
-@keyframes fadeach {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 .small h1 {
-    /*     animation: fadein 5s infinite  ; */
     text-shadow: 10px 10px 10px 10px solid yellow;
-}
-
-.pic {
-    height: 300px;
-    width: 300px;
-    background-color: rgb(240, 234, 234);
-    border-radius: 50%;
-    border: 10px solid white;
-    animation: fadeout 5s infinite ease-in-out;
-    overflow: hidden;
-}
-
-@keyframes fadeout {
-    0% {
-        opacity: 0;
-        filter: blur(10px);
-    }
-    100% {
-        opacity: 1;
-        filter: blur(0px);
-    }
-}
-
-.pic img {
-    height: 100%;
-    width: 100%;
-}
-
-.small h1 {
     font-size: 40px;
 }
 
@@ -148,32 +120,24 @@ main {
     font-size: 20px;
 }
 
-#skills {
-     height: 100%;
-    width: 100%;
-    /* background-color: blueviolet; */
+/* Skills and Contact Sections */
+#skills,
+#contactus {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    align-self: center;
     text-align: center;
 }
 
-@keyframes fadein {
-    from {
-        opacity: 0;
-        font-size: 20px;
-        transform: translateY(-100px);
-    }
-    to {
-        opacity: 1;
-        font-size: 40px;
-        text-shadow: 2px 20px 12px rgba(255, 247, 5, 0.68), 20px -20px 25px rgba(117, 125, 69, 1);
-        transform: translateY(0px);
-    }
+#contactus {
+    height: 350px;
+    text-align: center;
+    flex-direction: column;
+    margin-top: -1em;
 }
 
+/* Card Styles */
 .card {
     height: auto;
     width: auto;
@@ -183,13 +147,6 @@ main {
     border: 3px solid white;
     animation: shad 5s infinite;
     margin: 1.1rem;
-}
-
-
-@keyframes shad {
-    to {
-        box-shadow: 1px 4px 8px 1px rgba(250, 250, 250, 0.979), 0 6px 20px 0 rgba(8, 8, 8, 0.19);
-    }
 }
 
 .card p {
@@ -205,20 +162,22 @@ main {
     color: whitesmoke;
 }
 
-section {
-    display: flex;
-    justify-content: space-around;
+@keyframes fadeach {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-#contactus {
-    height: 350px;
-    /* background-color: blueviolet; */
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    margin-top: -1em;
+@keyframes shad {
+    to {
+        box-shadow: 1px 4px 8px 1px rgba(250, 250, 250, 0.979), 0 6px 20px 0 rgba(8, 8, 8, 0.19);
+    }
 }
 
+/* Form and Input Styles */
 input[type=text],
 input[type=email],
 textarea {
@@ -226,97 +185,13 @@ textarea {
     outline: none;
 }
 
-input:hover {
-    border: 5px solid gray;
-}
-
+input:hover,
 textarea:hover {
     border: 5px solid gray;
 }
 
 label {
     color: white;
-}
-
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 60px;
-    width: 100%;
-    margin-top: -5%;
-    text-align: center;
-    /* background-color: blue; */
-}
-
-footer i {
-    font-size: var(--name, 50px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 4px;
-    margin-left: px;
-    /* color: black; */
-}
-
-span {
-    display: flex;
-}
-
-.col {
-    height: 50px;
-    width: 50px;
-    text-align: center;
-    border-radius: 100%;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-@keyframes load {
-    0% {
-        transform: rotate(360 deg);
-        transform: translateX(-50px);
-        opacity: 0;
-    }
-    50% {
-        scale: 1;
-        color: gold;
-    }
-    100% {
-        transform: translateX(0px);
-        opacity: 1;
-        transform: rotate(0 deg);
-    }
-}
-
-body {
-    background-color: black;
-    color: white;
-}
-
-
-
-@keyframes come {
-    0% {
-        width: 0ch;
-    }
-    100% {
-        width: 16ch;
-    }
-}
-
-@keyframes dem {
-    from {
-        width: 0ch;
-    }
-    to {
-        width: 20ch;
-    }
 }
 
 form {
@@ -326,91 +201,53 @@ form {
     flex-direction: column;
 }
 
-progress {
-    color: white;
-}
-
-small {
-    font-size: 20px;
-}
-
-label {
-    color: white;
-}
-
-h1 {
-    font-size: var(--name);
-}
-
-@media only screen and (max-width: 600px) {
-    header {
-        flex-direction: column;
-    }
-    .menu menu-3
-    {
-        padding:3px;    }
-    main {
-        flex-direction: column;
-        text-align: center;
-    }
-      #small
-    {
-        width: 100%;
-    #small p {
-        font-size: 16px;
-    }
-    #skills,
-    #contactus {
-        flex-direction: column;
-        height: 100%;
-        text-align: center;
-    }
-    .card {
-        flex-direction: column;
-        text-align: center;
-    }
-    section {
-        flex-direction: column;
-        text-align: center;
-    }
-    form {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .scroll {
-        left: 19px;
-        margin-top: -100%;
-    }
-    .load {
-        display: none;
-    }
-  
-    ul
-    {
-        flex-direction:column;
-    }
- .download-btn {
-    padding: 8px 16px; /* Further reduce padding for very small screens */
-    font-size: 12px; /* Further reduce font size */
-    text-align: center; /* Center align text and icon */
-  }
-
-  .download-btn i {
-    font-size: 16px; /* Further reduce icon size */
-  }
-   
-
-}
-/* Style for the map container */
-#map {
-    height: 200px;
+/* Footer */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 60px;
     width: 100%;
-    position: relative;
-    margin: 0 auto;
+    margin-top: -5%;
+    text-align: center;
 }
 
-/* Responsive adjustments */
+/* Scroll to Top Button */
+.scroll {
+    height: 60px;
+    width: 60px;
+    background-color: #ff69b4; /* Pale Violet Red */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.scroll i {
+    font-size: 24px;
+    color: white;
+}
+
+.scroll.show {
+    opacity: 1;
+}
+
+/* Map Container */
+#map {
+    height: 300px;
+    width: 300px;
+    border-radius: 10%;
+    border: 2px solid rebeccapurple;
+    text-align: center;
+    margin-left: 36%;
+}
+
 @media (max-width: 768px) {
     #map {
         height: 180px;
@@ -424,185 +261,12 @@ h1 {
     }
 }
 
-
-/* Responsive adjustments for mobile devices */
-
-
-
-.scroll {
-    height: 60px;
-    width: 60px;
-    background-color: #ff69b4; /* Pale Violet Red */
-    position: fixed; /* Changed to fixed to stay in view when scrolling */
-    bottom: 20px; /* Position it at the bottom */
-    right: 20px; /* Position it at the right */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow for a modern effect */
-    opacity: 0; /* Start with hidden */
-    transition: opacity 0.3s; /* Smooth transition for opacity */
-}
-
-.scroll i {
-    font-size: 24px; /* Adjusted size for better fit */
-    color: white; /* White icon color */
-}
-
-/* Show the button when the user scrolls down */
-.scroll.show {
-    opacity: 1;
-}
-
-
-html {
-    scroll-behavior: smooth;
-}
-
-.mall {
-    background-color: mediumseagreen;
-}
-
-.spinner {
-    border: 2px slid blue;
-    border-top: 10px solid green;
-    border-radius: 100%;
-    animation: role 8s infinite;
-    height: auto;
-    width: auto;
-}
-
-.load {
-    height: 15px;
-    width: 1279px;
-    background-color: rgb(223, 223, 240);
-    animation: jail 5s linear;
-    animation-timeline: scroll(root);
-    border-radius: 1%;
-    position: fixed;
-    top: 0;
-    transition: 0.2ms all;
-}
-
-@keyframes jail {
-    0% {
-        width: 0;
-        background-color: blue;
-    }
-    100% {
-        width: 100%;
-        background-color: yellow;
-    }
-}
-
-body {
-    transition: 0.2ms all;
-}
-
-dialog {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgb(12, 70, 91);
-    color: white;
-    height: fit-content;
-    width: fit-content;
-    border-radius: 10px;
-}
-
-dialog h1,
-h4,
-h5 {
-    text-align: center;
-    text-wrap: nowrap;
-}
-
-
-#show {
-    text-align: center;
-    object-fit: cover;
-}
-#map {
-    height: 400px;
-    width: 400px;
-    border-radius: 10%;
-    border: 2px solid rebeccapurple;
-    text-align: center;
-    margin-left: 36%;
-}
-.menu{
-    padding: 5px;
-    font-family: 'Open Sans Condensed', sans-serif;
-  }
- 
-
-  .menu ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-  .menu li{
-    display: inline-block;
-    margin: 0 15px;
-  }
-  .menu a{
-    font-size: 22px;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #fff;
-    display: block;
-    position: relative;
-    padding: 4px 0;
-  }
-  .menu a::before{
-    content: "";
-    width: 100%;
-    height: 4px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background: #fff;
-    transition: 0.5s transform ease;
-    transform: scale3d(0,1,1);
-    transform-origin: 0 50%;
-  }
-  .menu a:hover::before{
-    transform: scale3d(1,1,1);
-  }
-  .menu-3 a::before{
-    transform-origin: 50% 50%;
-    background-color: blue;
-  }
- /* Target the scrollbar */
-/* For Webkit based browsers (e.g., Chrome, Safari) */
-::-webkit-scrollbar {
-    width: 12px; /* Width of the scrollbar */
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Color of the track */
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #888; /* Color of the scrollbar handle */
-    border-radius: 6px; /* Rounded corners */
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Color on hover */
-}
-
+/* Preloader */
 .preloader {
     position: fixed;
     top: 50%;
-    left:50%;
-    transform: translate(-50%,-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
     background-color: #ffffff;
@@ -611,50 +275,33 @@ h5 {
     align-items: center;
     z-index: 9999;
     background-image: url('sunexpress-sunexpress-airlines.gif');
-    /* The following properties ensure the background image covers the entire viewport */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
- .preloader img
-  {
-     filter: brightness(-20);
-  }
 
-
-.content {
-  display: none; /* Hide content until preloader is removed */
+.preloader img {
+    filter: brightness(-20);
 }
-#map {
-    height: 300px;
-    width: 300px;
-    border-radius: 10%;
-    border: 2px solid rebeccapurple;
-    text-align: center;
-    margin-left: 36%;
-}
-/* Add styles for the Projects Section */
 
+/* Projects Section */
 #projects {
     padding: 50px;
-  
     text-align: center;
-  }
-  
-  #de {
+}
+
+#de {
     font-size: 36px;
     color: #333;
-    
     text-align: center;
-    
-  }
-  
- .cards {
+}
+
+.cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Space between items */
-    padding: 20px; /* Added padding around the container */
+    gap: 20px;
+    padding: 20px;
 }
 
 .item {
@@ -663,8 +310,8 @@ h5 {
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 1 1 calc(33.333% - 20px); /* Adjust percentage for three columns */
-    max-width: calc(33.333% - 20px); /* Prevent item from growing beyond width */
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
     box-sizing: border-box;
     border: 3px solid white;
 }
@@ -723,3 +370,20 @@ h5 {
     color: #007bff;
 }
 
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
