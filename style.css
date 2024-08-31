@@ -650,6 +650,7 @@ h5 {
     font-size: 16px;
   }
   /* Projects Section Styles */
+/* Projects Section Styles */
 .projects {
     padding: 3rem 2rem;
     background: linear-gradient(135deg, #f2f2f2 0%, #ffffff 100%);
@@ -735,6 +736,3 @@ h5 {
         width: 90%;
     }
 }
-
-
-
