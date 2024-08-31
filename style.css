@@ -348,7 +348,7 @@ form {
     flex-direction: column;
 }
 
-progress {
+gress {
     color: white;
 }
 
@@ -678,7 +678,7 @@ h5 {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 40px 20px;
-    background-color: #f8f9fa;
+  
 }
 
 /* Style for each project card */
@@ -717,7 +717,7 @@ h5 {
 .project-links {
     display: flex;
     justify-content: space-between;
-    background: #f0f0f0;
+
     padding: 15px;
 }
 
@@ -732,7 +732,8 @@ h5 {
 }
 
 .btn-view:hover, .btn-github:hover {
-    background: #0056b3;
+    background: black;
+    colotr:white;
 }
 
 .btn-github {
