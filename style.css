@@ -392,22 +392,31 @@ h1 {
         flex-direction:column;
     }
 
-    #map {
-         #map height: 200px; /* Adjust height for smaller screens */
-        width: 100%;   /* Make the width 100% of the parent container */
-        position: static; /* Remove absolute positioning for better flow on small screens */
-        right: 0; /* Reset right alignment */
-    }
    
 
 }
+/* Style for the map container */
 #map {
     height: 200px;
-    width: 200px;
-    position: absolute;
-   
-    /* Default styling for larger screens */
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #map {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    #map {
+        height: 160px;
+        margin: 0;
+    }
+}
+
 
 /* Responsive adjustments for mobile devices */
 
