@@ -405,3 +405,103 @@ dialog h1 {
     border: 1px solid #ddd;
     border-radius: 8px;
 }
+/* Base styles for larger screens */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#show {
+    padding: 20px;
+}
+
+#map {
+    height: 400px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.scroll {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+}
+
+.edit1 {
+    margin: 5px;
+}
+
+/* Dialog styles */
+dialog {
+    padding: 20px;
+}
+
+dialog h1 {
+    margin: 10px 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    #show {
+        padding: 10px;
+    }
+    
+    #map {
+        height: 300px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .scroll {
+        display: block;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+    
+    .edit1 {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    dialog {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
+    #map {
+        height: 200px;
+    }
+    
+    button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .scroll {
+        width: 60px;
+        height: 60px;
+        font-size: 16px;
+    }
+    
+    dialog {
+        width: 90%;
+        max-width: 300px;
+    }
+}
