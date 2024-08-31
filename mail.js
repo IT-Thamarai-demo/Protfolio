@@ -1,8 +1,3 @@
-document.getElementById('downloadCV').addEventListener('click', function() {
-    setTimeout(() => {
-        this.classList.add('done');
-    }, 500); // Delay to simulate download completion
-});
 
 
 Notification.requestPermission().then((res)=>
@@ -244,4 +239,11 @@ Notification.requestPermission().then((res)=>
             assignRandomAOS();
             AOS.init(); // Initialize AOS animations
         };
-            
+
+
+
+document.getElementById('downloadCV').addEventListener('click', function() {
+    // Add the 'done' class to the button
+    this.classList.add('done');
+});
+
