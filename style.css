@@ -391,7 +391,15 @@ h1 {
     {
         flex-direction:column;
     }
+ .download-btn {
+    padding: 8px 16px; /* Further reduce padding for very small screens */
+    font-size: 12px; /* Further reduce font size */
+    text-align: center; /* Center align text and icon */
+  }
 
+  .download-btn i {
+    font-size: 16px; /* Further reduce icon size */
+  }
    
 
 }
@@ -798,14 +806,6 @@ h5 {
 }
 
 @media (max-width: 480px) {
-  .download-btn {
-    padding: 8px 16px; /* Further reduce padding for very small screens */
-    font-size: 12px; /* Further reduce font size */
-    text-align: center; /* Center align text and icon */
-  }
-
-  .download-btn i {
-    font-size: 16px; /* Further reduce icon size */
-  }
+ 
 }
 
