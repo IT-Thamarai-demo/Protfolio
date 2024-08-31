@@ -704,3 +704,30 @@ h5 {
       flex: 1 1 calc(50% - 20px); 
     }
     }  
+
+
+.download-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(45deg, #6c63ff, #00b4db);
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.download-btn:hover {
+  background: linear-gradient(45deg, #00b4db, #6c63ff);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
