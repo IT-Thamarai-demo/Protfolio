@@ -90,7 +90,7 @@ main {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-eveny;
     animation: fadeach 5s infinite;
     border-radius: 10px;
 }
