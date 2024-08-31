@@ -649,15 +649,16 @@ h5 {
     
   }
   
-  .cards {
+ .cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px; /* Space between items */
-  }
-  
-  .item {
-    background-color:black;
+    padding: 20px; /* Added padding around the container */
+}
+
+.item {
+    background-color: black;
     border-radius: 15px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -666,60 +667,59 @@ h5 {
     max-width: calc(33.333% - 20px); /* Prevent item from growing beyond width */
     box-sizing: border-box;
     border: 3px solid white;
-  }
-  
-  .item:hover {
+}
+
+.item:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
-  }
-  
- 
-  
-  .card-content {
+}
+
+.card-content {
     padding: 20px;
-  }
-  
-  .card-content h3 {
+}
+
+.card-content h3 {
     font-size: 24px;
     margin: 0;
-    color:white;
-  }
-  
-  .card-content p {
+    color: white;
+}
+
+.card-content p {
     margin: 10px 0 20px;
-    color:white;
-  }
-  
-  .card-actions {
+    color: white;
+}
+
+.card-actions {
     display: flex;
     justify-content: space-between;
     padding: 0 20px 20px;
-  }
-  
-  .card-actions a {
+}
+
+.card-actions a {
     text-decoration: none;
     color: #007bff;
     font-weight: bold;
-  }
-  
-  .card-actions a.view-project {
+}
+
+.card-actions a.view-project {
     background-color: #007bff;
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-  }
-  
-  .card-actions a.view-project:hover {
+}
+
+.card-actions a.view-project:hover {
     background-color: #0056b3;
-  }
-  
-  .card-actions a.github-link {
+}
+
+.card-actions a.github-link {
     font-size: 24px;
     color: #333;
     transition: color 0.3s ease;
-  }
-  
-  .card-actions a.github-link:hover {
+}
+
+.card-actions a.github-link:hover {
     color: #007bff;
-  }
+}
+
