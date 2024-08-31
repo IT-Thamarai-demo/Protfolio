@@ -649,90 +649,91 @@ h5 {
     margin-right: 8px;
     font-size: 16px;
   }
-  /* Projects Section Styles */
-/* Projects Section Styles */
-.projects {
-    padding: 3rem 2rem;
-    background: linear-gradient(135deg, #f2f2f2 0%, #ffffff 100%);
+/* Container for the entire projects section */
+.projects-section {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
 }
 
-/* Individual Card Styles */
-.item {
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+/* Style for each project card */
+.project-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
     overflow: hidden;
-    width: 300px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    width: calc(33% - 40px);
+    transition: transform 0.3s ease;
 }
 
-.item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    background-color: #f9f9f9;
+.project-card:hover {
+    transform: scale(1.03);
 }
 
-/* Card Content Styles */
-.card-content {
-    padding: 2rem;
-    text-align: center;
+/* Style for project details */
+.project-details {
+    padding: 20px;
 }
 
-.card-content h3 {
-    margin-top: 0;
-    font-size: 1.6rem;
+.project-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
     color: #333;
 }
 
-.card-content p {
-    margin: 1rem 0;
-    color: #666;
+.project-description {
     font-size: 1rem;
+    color: #666;
 }
 
-/* Card Actions Styles */
-.card-actions {
+/* Style for project action buttons */
+.project-links {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background: #f4f4f4;
+    background: #f0f0f0;
+    padding: 15px;
 }
 
-.card-actions a {
+.btn-view, .btn-github {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
     text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: color 0.3s ease;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
-.card-actions a:hover {
-    color: #0056b3;
+.btn-view:hover, .btn-github:hover {
+    background: #0056b3;
 }
 
-.card-actions .github-link {
-    color: #333;
+.btn-github {
+    background: #333;
 }
 
-.card-actions .github-link i {
+.btn-github:hover {
+    background: #111;
+}
+
+.btn-github i {
+    margin-left: 5px;
     font-size: 1.2rem;
 }
 
-/* Responsive Design */
+/* Responsive styling */
 @media (max-width: 768px) {
-    .projects {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .item {
-        width: 90%;
+    .project-card {
+        width: calc(50% - 40px);
     }
 }
+
+@media (max-width: 480px) {
+    .project-card {
+        width: calc(100% - 40px);
+    }
+}
+
