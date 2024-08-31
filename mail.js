@@ -245,6 +245,18 @@ Notification.requestPermission().then((res)=>
 document.getElementById('downloadCV').addEventListener('click', function() {
     // Add the 'done' class to the button when clicked
     this.classList.add('done');
+    
+    // Show the Toast notification
+    Toastify({
+        text: "CV Downloaded Successfully!",
+        duration: 3000, // Duration of the toast in milliseconds
+        close: true,    // Show close button
+        gravity: "top", // Position of the toast
+        position: "right", // Position of the toast
+        backgroundColor: "#28a745", // Background color of the toast
+        stopOnFocus: true // Stop the toast when hovered
+    }).showToast();
 });
+
 
 
