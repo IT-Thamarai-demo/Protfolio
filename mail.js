@@ -245,5 +245,6 @@ Notification.requestPermission().then((res)=>
 document.getElementById('downloadCV').addEventListener('click', function() {
     // Add the 'done' class to the button
     this.classList.add('done');
+    console.log("started")
 });
 
