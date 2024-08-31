@@ -10,6 +10,14 @@ Notification.requestPermission().then((res)=>
       
     }
 })
+function handlePreloader() {
+    const loader = document.querySelector('.preloader');
+    const content = document.querySelector('.content');
+    setTimeout(() => {
+        loader.style.display = 'none';
+        content.style.display = 'block';
+    }, 2000);
+}
 
 //your device width and height
 let h = window.innerHeight;
