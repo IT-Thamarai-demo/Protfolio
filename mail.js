@@ -10,29 +10,6 @@ Notification.requestPermission().then((res)=>
       
     }
 })
-let skills=document.querySelector("#skiils");
-skills.style.display="none";
-
-let contact=document.querySelector("#contactus")
-contact.style.display="none";
-
-let footer=document.querySelector("footer")
-footer.style.display="none";
-let dow=document.querySelector(".down");
-dow.addEventListener("click",()=>
-   
-{
-    if(true)
-        {
-            alert("hai")
-             skills.style.display="block";
-             contact.style.display="block";
-             footer.style.display="block";
-
-        }
-
-})
-
 
 //your device width and height
 let h = window.innerHeight;
