@@ -1,227 +1,235 @@
-// Request notification permission and show a notification if granted
-function requestNotificationPermission() {
-    Notification.requestPermission().then((res) => {
-        if (res === "granted") {
-            new Notification("Welcome To My Portfolio 💓", {
-                icon: "IMG-20230719-WA0007.jpg",
-                body: "Haiii 🤍😊💓"
-            });
-        }
-    });
-}
 
-// Show or hide the button based on scroll position
-function toggleScrollButton() {
-    const scrollButton = document.querySelector('.scroll');
-    if (window.scrollY > 300) {
-        scrollButton.classList.add('show');
-    } else {
-        scrollButton.classList.remove('show');
+Notification.requestPermission().then((res)=>
+{
+    if(res=="granted")
+    {
+      const notification= new Notification("Welcome To My Protfolio 💓",{
+        icon:"IMG-20230719-WA0007.jpg",
+        body:"Haiii 🤍😊💓"
+      })
+      
     }
+})
+let skills=document.querySelector("#skiils");
+skills.style.display="none";
+
+let contact=document.querySelector("#contactus")
+contact.style.display="none";
+
+let footer=document.querySelector("footer")
+footer.style.display="none";
+let dow=document.querySelector(".down");
+dow.addEventListener("click",()=>
+   
+{
+    if(true)
+        {
+            alert("hai")
+             skills.style.display="block";
+             contact.style.display="block";
+             footer.style.display="block";
+
+        }
+
+})
+
+
+//your device width and height
+let h = window.innerHeight;
+let w = window.innerWidth;
+
+// naviagation loggc
+
+let tag = document.querySelector("#dan");
+console.log(tag);
+// contact form
+document.querySelector("#c-form").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+    let data = new FormData(e.target)
+    fetch('https://formspree.io/f/xgeglblo', {
+            method: 'POST',
+            body: data
+        })
+        .then((res) => {
+            if (res.ok) {
+                alert("success")
+                console.log(res);
+            } else {
+                alert("failure")
+            }
+
+        })
+});
+let body = document.querySelector("body");
+let btn1 = document.querySelector("#change");
+let icon = document.querySelector(".scroll")
+let text = document.querySelector("#c");
+//toggle background colot
+
+function demo() {
+  let red = Math.floor(Math.random() * 100);
+  let green = Math.floor(Math.random() * 100);
+  let blue = Math.floor(Math.random() * 100);
+  let random = `rgb(${red},${green},${blue})`;
+  console.log(random);
+ let body= document.querySelector("body")
+ body.style.backgroundColor=random;
 }
 
-// Toggle background color
-function changeBackgroundColor() {
-    const red = Math.floor(Math.random() * 256);
-    const green = Math.floor(Math.random() * 256);
-    const blue = Math.floor(Math.random() * 256);
-    const randomColor = `rgb(${red},${green},${blue})`;
-    document.body.style.backgroundColor = randomColor;
+
+
+
+//loading alert
+// 
+
+function along() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+        icon.classList.add("active")
+
+    } else {
+        icon.classList.remove("active")
+    }
+
+})
+//get current date
+const date=new Date();
+document.querySelector("#dt").textContent = `Today is  ${date.toLocaleDateString()}`
+
+//openning and closing dialog
+
+function OpenDialog() {
+    tag.showModal();
 }
 
-// Show loading alert
-function showLoadingAlert() {
-    alert("Welcome To My Page ❤️");
+function CLoseDialog(params) {
+    tag.close();
 }
 
-// Scroll to the top of the page
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+//display current time
 
-// Open and close dialog
-function openDialog() {
-    const dialog = document.getElementById('dan');
-    dialog.showModal();
-}
 
-function closeDialog() {
-    const dialog = document.getElementById('dan');
-    dialog.close();
-}
+let CT = document.querySelector("#ct")
 
-// Update current time every second
-function displayCurrentTime() {
-    const CT = document.querySelector("#ct");
-    setInterval(() => {
-        const currentTime = new Date();
-        CT.innerHTML = "Current Time is : " + currentTime.toLocaleTimeString();
-    }, 1000);
-}
 
-// Display device information
-function displayDeviceInfo() {
-    const DF = document.querySelector("#di");
+setInterval(() => {
+    const currentTime = new Date();
+
+    const formattedTime = " Current Time is : " + currentTime.toLocaleTimeString();
+
+    CT.innerHTML = formattedTime;
+
+}, 1000);
+
+
+//dispaly device information
+
+let DF = document.querySelector("#di");
+if (navigator.userAgentData) {
+    const deviceName = navigator.userAgentData.brands[0].brand;
+    DF.innerHTML = " Device name :" + deviceName;
+} else {
+    // Fallback to navigator.userAgent for older browsers
     const userAgent = navigator.userAgent;
     const match = userAgent.match(/\((.*?)\)/);
     if (match && match.length > 1) {
-        DF.innerHTML = "Your Device Name Is : " + match[1];
+        const deviceInfo = match[1];
+        DF.innerHTML = " Your Device Name Is :" + deviceInfo;
     } else {
-        DF.innerHTML = "Unable To Find Device Information";
+        DF.innerHTML = " Unable To Find Device :" + deviceInfo;
     }
 }
 
-// Display battery information
-function displayBatteryInfo() {
-    const dis = document.querySelector("#bl");
-    if ('getBattery' in navigator) {
-        navigator.getBattery().then(function (battery) {
+
+
+
+//display battety information
+let dis = document.querySelector("#bl");
+
+// Check if Battery Status API is supported
+if ('getBattery' in navigator) {
+    navigator.getBattery().then(function(battery) {
+        // Update the battery percentage initially
+        updateBatteryStatus(battery);
+
+        // Update the battery percentage whenever it changes
+        battery.addEventListener('levelchange', function() {
             updateBatteryStatus(battery);
-            battery.addEventListener('levelchange', () => updateBatteryStatus(battery));
         });
-    } else {
-        dis.innerHTML = "Battery API is not supported by your browser";
-    }
 
-    function updateBatteryStatus(battery) {
-        const batteryPercentage = battery.level * 100;
-        dis.innerHTML = `Battery Percentage : ${batteryPercentage.toFixed(2)}%`;
-    }
-}
+        function updateBatteryStatus(battery) {
+            // Get the battery percentage
+            const batteryPercentage = battery.level * 100;
 
-// Display greeting based on time of day
-function displayGreeting() {
-    const goodmorning = document.querySelector("#time");
-    const now = new Date();
-    const hour = now.getHours();
-    if (hour >= 5 && hour < 12) {
-        goodmorning.textContent = "Good morning 🌄!";
-    } else if (hour >= 12 && hour < 17) {
-        goodmorning.textContent = "Good afternoon 😋!";
-    } else if (hour >= 17 && hour < 22) {
-        goodmorning.textContent = "Good evening 🌆!";
-    } else {
-        goodmorning.textContent = "Good night 🌙!";
-    }
-}
-
-// Display device dimensions
-function displayDeviceDimensions() {
-    const h = window.innerHeight;
-    const w = window.innerWidth;
-    document.querySelector("#hei").textContent = "Device Height : " + h + "px";
-    document.querySelector("#wei").textContent = "Device Width : " + w + "px";
-}
-
-// Initialize and configure the map with user's location
-function initializeMap() {
-    const map = L.map('map');
-    if ('geolocation' in navigator) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-            const userLat = position.coords.latitude;
-            const userLng = position.coords.longitude;
-            map.setView([userLat, userLng], 15);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
-            L.marker([userLat, userLng]).addTo(map)
-                .bindPopup("<b>Your Location ❤️</b>")
-                .openPopup();
-        });
-    } else {
-        alert('Geolocation is not supported by your browser');
-    }
-}
-
-// Display a notification when the page visibility changes
-function handleVisibilityChange() {
-    document.addEventListener("visibilitychange", () => {
-        if (document.hidden) {
-            new Notification("Come back ❤️", {
-                body: "Please come back to my site 🙏😂",
-                icon: "IMG-20230719-WA0007.jpg"
-            });
+            // Display the battery percentage
+            dis.innerHTML = `    Battery Percentage : ${batteryPercentage.toFixed(2)} `;
         }
     });
+} else {
+    dis.innerHTML = " Api is not supported by your battery"
+}
+//    good morning
+
+let goodmorning = document.querySelector("#time")
+
+
+const now = new Date();
+const hour = now.getHours();
+
+if (hour >= 5 && hour < 12) {
+    goodmorning.textContent = "Good morning 🌄!";
+} else if (hour >= 12 && hour < 17) {
+    goodmorning.textContent = "Good afternoon 😋!";
+} else if (hour >= 17 && hour < 22) {
+    goodmorning.textContent = "Good evening 🌆!";
+} else {
+    goodmorning.textContent = "Good night 🌙!";
 }
 
-// Initialize AOS animations with random effects
-function initializeAOS() {
-    const aosAnimations = [
-        'fade', 'fade-up', 'fade-down', 'fade-left', 'fade-right', 
-        'fade-up-right', 'fade-up-left', 'fade-down-right', 'fade-down-left', 
-        'flip-left', 'flip-right', 'flip-up', 'flip-down', 
-        'zoom-in', 'zoom-in-up', 'zoom-in-down', 'zoom-in-left', 'zoom-in-right', 
-        'zoom-out', 'zoom-out-up', 'zoom-out-down', 'zoom-out-left', 'zoom-out-right'
-    ];
-    
-    const elements = document.querySelectorAll('[data-aos]');
-    elements.forEach(element => {
-        const randomAnimation = aosAnimations[Math.floor(Math.random() * aosAnimations.length)];
-        element.setAttribute('data-aos', randomAnimation);
-    });
-    AOS.init();
-}
+document.querySelector("#hei").textContent = "Device Height  :" + h + "Px"
+document.querySelector("#wei").innerHTML = "Device Width  :" + w + "Px"
+//typing animation
 
-// Show or hide the preloader
-function handlePreloader() {
+var typed = new Typed('#element', {
+    strings: ['Content Creator 💓 ...' , 'Free Lancer  ...❤️','Web Desinnger  ... 💕'],
+    typeSpeed: 70,
+    loop:true
+  });
+ function vibrare(ms)
+  {
+     navigator.vibrate(ms)
+  }
+  window.addEventListener('load', function () {
     const loader = document.querySelector('.preloader');
-    const content = document.querySelector('.content');
-    setTimeout(() => {
-        loader.style.display = 'none';
-        content.style.display = 'block';
-    }, 2000);
-}
 
-// Handle form submission with Formspree
-function handleFormSubmission() {
-    document.querySelector("#c-form").addEventListener("submit", function (e) {
-        e.preventDefault();
-        const data = new FormData(e.target);
-        fetch('https://formspree.io/f/xgeglblo', {
-            method: 'POST',
-            body: data
-        }).then((res) => {
-            if (res.ok) {
-                alert("Success");
-            } else {
-                alert("Failure");
-            }
-        });
-    });
-}
+  
+    setTimeout(function () {
+      loader.style.display = 'none';
 
-// Initialize Typed.js for typing animation
-function initializeTypingAnimation() {
-    new Typed('#element', {
-        strings: ['Content Creator 💓 ...', 'Freelancer ...❤️', 'Web Designer ...💕'],
-        typeSpeed: 70,
-        loop: true
-    });
-}
+    }, 2000); // Adjust the time as needed
+  });
+  let map = L.map('map');
 
-// Function to download CV
-function downloadCV() {
-    window.location.href = 'Thamarai_Kannan_Front_End_Developer_5_27.pdf';
-}
+        // Initialize the map with user's location
+        if ('geolocation' in navigator) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var userLat = position.coords.latitude;
+                var userLng = position.coords.longitude;
 
-// Call functions on page load
-window.onload = function () {
-    requestNotificationPermission();
-    displayCurrentTime();
-    displayDeviceInfo();
-    displayBatteryInfo();
-    displayGreeting();
-    displayDeviceDimensions();
-    initializeMap();
-    handleVisibilityChange();
-    initializeAOS();
-    handlePreloader();
-    handleFormSubmission();
-    initializeTypingAnimation();
-};
+                map.setView([userLat, userLng],15);
 
-// Scroll event listener
-window.addEventListener('scroll', () => {
-    toggleScrollButton();
-});
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+
+                var marker = L.marker([userLat, userLng]).addTo(map);
+                marker.bindPopup("<b>Your Location ❤️</b>").openPopup();
+            });
+        } else {
+            alert('Geolocation is not supported by your browser');
+        }
+
