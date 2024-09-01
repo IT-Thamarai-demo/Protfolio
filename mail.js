@@ -104,7 +104,7 @@ function OpenDialog() {
     tag.showModal();
 }
 
-function CLoseDialog(params) {
+function CLoseDialog() {
     tag.close();
 }
 
