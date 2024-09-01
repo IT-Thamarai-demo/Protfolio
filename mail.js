@@ -30,11 +30,8 @@ let height = window.innerHeight;
 let widthElement = document.querySelector(".width");
 let heightElement = document.querySelector(".height");
 
-if (widthElement) widthElement.textContent = width;
-if (heightElement) heightElement.textContent = height;
-
-// Logging navigation tag
-
+if (widthElement) widthElement.textContent = width + "px";
+if (heightElement) heightElement.textContent = height + "px";
 
 // Contact form submission using Formspree
 document.querySelector("#c-form").addEventListener("submit", function (e) {
@@ -80,8 +77,6 @@ const date = new Date();
 let dateElement = document.querySelector(".date");
 if (dateElement) dateElement.textContent = `Today is ${date.toLocaleDateString()}`;
 
-   
-
 // Display current time
 let CT = document.querySelector(".time");
 
@@ -111,7 +106,6 @@ if (DF) {
         }
     }
 }
-
 
 // Display battery information
 let dis = document.querySelector(".battery");
@@ -193,37 +187,32 @@ if ('geolocation' in navigator) {
     alert('Geolocation is not supported by your browser.');
 }
 
-
+// Dialog box handling
 let tag = document.querySelector("#myDialog");
 
-        function openpop() {
-            if (tag) tag.showModal();
-        }
+function openpop() {
+    if (tag) tag.showModal();
+}
 
-        function closepop() {
-            if (tag) tag.close();
-        }
+function closepop() {
+    if (tag) tag.close();
+}
 
-        function vibrate(duration) {
-            if (navigator.vibrate) {
-                navigator.vibrate(duration);
-            } else {
-                alert("Vibration not supported on this device.");
-            }
-
-    }
-
-document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "hidden") {
+// Visibility change handling
+document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+        console.log("Tab is hidden");
+        // You can add code here to pause certain actions, etc.
+    } else {
+        console.log("Tab is visible");
+        // You can add code here to resume actions, etc.
         Notification.requestPermission().then((res) => {
             if (res === "granted") {
-                const notification = new Notification("Come back to my site! 💓", {
-                    icon: "IMG-20230719-WA0007.jpg",  // Replace with the correct path to your image
-                    body: "I have something cool for you!"
+                const notification = new Notification("Welcome back to the page!", {
+                    icon: "IMG-20230719-WA0007.jpg",
+                    body: "Glad to have you back 💓!"
                 });
-
-                notification.onclick = () => {
-                    window.focus();
-                };
             }
         });
+    }
+});
