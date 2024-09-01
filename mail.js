@@ -80,24 +80,7 @@ const date = new Date();
 let dateElement = document.querySelector(".date");
 if (dateElement) dateElement.textContent = `Today is ${date.toLocaleDateString()}`;
 
-   let tag = document.querySelector("#myDialog");
-    console.log(tag);
-
-    function openpop() {
-        if (tag) tag.showModal();
-    }
-
-    function closepop() {
-        if (tag) tag.close();
-    }
-
-    function vibrate(duration) {
-        if (navigator.vibrate) {
-            navigator.vibrate(duration);
-        } else {
-            alert("Vibration not supported on this device.");
-        }
-    }
+   
 
 // Display current time
 let CT = document.querySelector(".time");
@@ -208,3 +191,21 @@ if ('geolocation' in navigator) {
 } else {
     alert('Geolocation is not supported by your browser.');
 }
+
+
+let tag = document.querySelector("#myDialog");
+
+        function openpop() {
+            if (tag) tag.showModal();
+        }
+
+        function closepop() {
+            if (tag) tag.close();
+        }
+
+        function vibrate(duration) {
+            if (navigator.vibrate) {
+                navigator.vibrate(duration);
+            } else {
+                alert("Vibration not supported on this device.");
+            }
