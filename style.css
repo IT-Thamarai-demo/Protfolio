@@ -865,21 +865,22 @@ h5 {
 .project-title {
     font-size: 1.6rem;
     font-weight: 600;
-    color: #333;
+    color: white;
     margin-bottom: 0.8rem;
 }
 
 .project-description {
     font-size: 1rem;
-    color: #555;
+    color:white;
     line-height: 1.5;
 }
 
 .project-actions {
     display: flex;
     justify-content: space-between;
+    flex-direction:row;
     padding: 1rem 1.5rem;
-    background-color: #fafafa;
+    background-color: black;
     border-top: 1px solid #e0e0e0;
 }
 
