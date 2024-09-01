@@ -210,3 +210,19 @@ let tag = document.querySelector("#myDialog");
             } else {
                 alert("Vibration not supported on this device.");
             }
+document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") {
+        Notification.requestPermission().then((res) => {
+            if (res === "granted") {
+                const notification = new Notification("Come back to my site! 💓", {
+                    icon: "IMG-20230719-WA0007.jpg",  // Replace with the correct path to your image
+                    body: "I have something cool for you!"
+                });
+
+                notification.onclick = () => {
+                    window.focus();
+                };
+            }
+        });
+    }
+});
