@@ -13,11 +13,19 @@ Notification.requestPermission().then((res)=>
 function handlePreloader() {
     const loader = document.querySelector('.preloader');
     const content = document.querySelector('.content');
-    setTimeout(() => {
-        loader.style.display = 'none';
-        content.style.display = 'block';
-    }, 2000);
+    
+    // Optional: Add an event listener to load the function after the DOM is fully loaded
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loader.style.display = 'none';
+            content.style.display = 'block';
+        }, 2000); // Adjust the delay as needed
+    });
 }
+
+// Initialize the preloader handler
+handlePreloader();
+
 
 
 
