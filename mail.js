@@ -30,10 +30,12 @@ handlePreloader();
 
 
 //your device width and height
-let width= window.innerHeight;
+let width = window.innerWidth; // Corrected to get the width of the window
 let height = window.innerHeight;
-document.querySelector(".width").textContent=width;
-document.querySelector(".width").textContent=height;
+
+document.querySelector(".width").textContent = width;
+document.querySelector(".height").textContent = height; // Corrected to target the height element
+
 
 
 // naviagation loggc
