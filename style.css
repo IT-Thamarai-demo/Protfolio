@@ -836,13 +836,12 @@ h5 {
 /* Container for projects */
 .projects-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 2rem;
     padding: 2rem;
-    background-color: transparent; /* Matching background color with the container */
-    border-radius: 8px; /* Optional: add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
-}
+    background-color: transparent;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
 /* Card styling */
 .project-card {
