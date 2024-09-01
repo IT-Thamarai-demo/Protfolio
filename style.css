@@ -829,10 +829,10 @@ h5 {
   }
 .projects-section {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 2rem;
     padding: 2rem;
-    background-color: #f9f9f9;
+    background-color: transparent;
 }
 
 .project-card {
