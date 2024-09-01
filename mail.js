@@ -15,21 +15,23 @@ function handlePreloader() {
 
     window.addEventListener('load', () => {
         setTimeout(() => {
-            loader.style.display = 'none';
-            content.style.display = 'block';
+            if (loader) loader.style.display = 'none';
+            if (content) content.style.display = 'block';
         }, 2000); // Adjust the delay as needed
     });
 }
 
-// Initialize the preloader handler
 handlePreloader();
 
 // Device width and height
 let width = window.innerWidth;
 let height = window.innerHeight;
 
-document.querySelector(".width").textContent = width;
-document.querySelector(".height").textContent = height;
+let widthElement = document.querySelector(".width");
+let heightElement = document.querySelector(".height");
+
+if (widthElement) widthElement.textContent = width;
+if (heightElement) heightElement.textContent = height;
 
 // Logging navigation tag
 let tag = document.querySelector("#dan");
@@ -76,83 +78,94 @@ window.addEventListener("scroll", () => {
 
 // Display current date
 const date = new Date();
-document.querySelector(".date").textContent = `Today is ${date.toLocaleDateString()}`;
+let dateElement = document.querySelector(".date");
+if (dateElement) dateElement.textContent = `Today is ${date.toLocaleDateString()}`;
 
 // Open and close dialog
 function openDialog() {
-    tag.showModal();
+    if (tag) tag.showModal();
 }
 
 function closeDialog() {
-    tag.close();
+    if (tag) tag.close();
 }
 
 // Display current time
 let CT = document.querySelector(".time");
 
-setInterval(() => {
-    const currentTime = new Date();
-    const formattedTime = "Current Time is: " + currentTime.toLocaleTimeString();
-    CT.innerHTML = formattedTime;
-}, 1000);
+if (CT) {
+    setInterval(() => {
+        const currentTime = new Date();
+        const formattedTime = "Current Time is: " + currentTime.toLocaleTimeString();
+        CT.innerHTML = formattedTime;
+    }, 1000);
+}
 
 // Display device information
 let DF = document.querySelector(".browser");
 
-if (navigator.userAgentData) {
-    const deviceName = navigator.userAgentData.brands[0].brand;
-    DF.innerHTML = "Device name: " + deviceName;
-} else {
-    // Fallback for older browsers
-    const userAgent = navigator.userAgent;
-    const match = userAgent.match(/\((.*?)\)/);
-    if (match && match.length > 1) {
-        const deviceInfo = match[1];
-        DF.innerHTML = "Your Device Name Is: " + deviceInfo;
+if (DF) {
+    if (navigator.userAgentData) {
+        const deviceName = navigator.userAgentData.brands[0].brand;
+        DF.innerHTML = "Device name: " + deviceName;
     } else {
-        DF.innerHTML = "Unable to Find Device Info";
+        const userAgent = navigator.userAgent;
+        const match = userAgent.match(/\((.*?)\)/);
+        if (match && match.length > 1) {
+            const deviceInfo = match[1];
+            DF.innerHTML = "Your Device Name Is: " + deviceInfo;
+        } else {
+            DF.innerHTML = "Unable to Find Device Info";
+        }
     }
 }
 
 // Display battery information
 let dis = document.querySelector(".battery");
 
-if ('getBattery' in navigator) {
-    navigator.getBattery().then(function (battery) {
-        updateBatteryStatus(battery);
-
-        battery.addEventListener('levelchange', function () {
+if (dis) {
+    if ('getBattery' in navigator) {
+        navigator.getBattery().then(function (battery) {
             updateBatteryStatus(battery);
-        });
 
-        function updateBatteryStatus(battery) {
-            const batteryPercentage = battery.level * 100;
-            dis.innerHTML = `Battery Percentage: ${batteryPercentage.toFixed(2)}%`;
-        }
-    });
-} else {
-    dis.innerHTML = "Battery API is not supported by your browser.";
+            battery.addEventListener('levelchange', function () {
+                updateBatteryStatus(battery);
+            });
+
+            function updateBatteryStatus(battery) {
+                const batteryPercentage = battery.level * 100;
+                dis.innerHTML = `Battery Percentage: ${batteryPercentage.toFixed(2)}%`;
+            }
+        });
+    } else {
+        dis.innerHTML = "Battery API is not supported by your browser.";
+    }
 }
 
 // Greeting based on time of day
 let goodmorning = document.querySelector(".current");
 
-const now = new Date();
-const hour = now.getHours();
+if (goodmorning) {
+    const now = new Date();
+    const hour = now.getHours();
 
-if (hour >= 5 && hour < 12) {
-    goodmorning.textContent = "Good morning 🌄!";
-} else if (hour >= 12 && hour < 17) {
-    goodmorning.textContent = "Good afternoon 😋!";
-} else if (hour >= 17 && hour < 22) {
-    goodmorning.textContent = "Good evening 🌆!";
-} else {
-    goodmorning.textContent = "Good night 🌙!";
+    if (hour >= 5 && hour < 12) {
+        goodmorning.textContent = "Good morning 🌄!";
+    } else if (hour >= 12 && hour < 17) {
+        goodmorning.textContent = "Good afternoon 😋!";
+    } else if (hour >= 17 && hour < 22) {
+        goodmorning.textContent = "Good evening 🌆!";
+    } else {
+        goodmorning.textContent = "Good night 🌙!";
+    }
 }
 
 // Display corrected device width and height
-document.querySelector("#hei").textContent = "Device Height: " + height + "px";
-document.querySelector("#wei").innerHTML = "Device Width: " + width + "px";
+let heiElement = document.querySelector("#hei");
+if (heiElement) heiElement.textContent = "Device Height: " + height + "px";
+
+let weiElement = document.querySelector("#wei");
+if (weiElement) weiElement.innerHTML = "Device Width: " + width + "px";
 
 // Typing animation using Typed.js
 var typed = new Typed('#element', {
