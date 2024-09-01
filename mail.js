@@ -82,11 +82,11 @@ let dateElement = document.querySelector(".date");
 if (dateElement) dateElement.textContent = `Today is ${date.toLocaleDateString()}`;
 
 // Open and close dialog
-function openDialog() {
+function openpop() {
     if (tag) tag.showModal();
 }
 
-function closeDialog() {
+function closepop() {
     if (tag) tag.close();
 }
 
