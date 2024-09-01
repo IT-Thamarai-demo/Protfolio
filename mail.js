@@ -34,8 +34,7 @@ if (widthElement) widthElement.textContent = width;
 if (heightElement) heightElement.textContent = height;
 
 // Logging navigation tag
-let tag = document.querySelector("#myDialog");
-console.log(tag);
+
 
 // Contact form submission using Formspree
 document.querySelector("#c-form").addEventListener("submit", function (e) {
@@ -81,14 +80,24 @@ const date = new Date();
 let dateElement = document.querySelector(".date");
 if (dateElement) dateElement.textContent = `Today is ${date.toLocaleDateString()}`;
 
-// Open and close dialog
-function openpop() {
-    if (tag) tag.showModal();
-}
+   let tag = document.querySelector("#myDialog");
+    console.log(tag);
 
-function closepop() {
-    if (tag) tag.close();
-}
+    function openpop() {
+        if (tag) tag.showModal();
+    }
+
+    function closepop() {
+        if (tag) tag.close();
+    }
+
+    function vibrate(duration) {
+        if (navigator.vibrate) {
+            navigator.vibrate(duration);
+        } else {
+            alert("Vibration not supported on this device.");
+        }
+    }
 
 // Display current time
 let CT = document.querySelector(".time");
