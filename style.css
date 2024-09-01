@@ -827,4 +827,101 @@ h5 {
     width: 0; /* Start with 0 width */
     transition: width 1s ease-in-out; /* Animate the width */
   }
-</style>
+.projects-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.project-card {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-details {
+    padding: 1.5rem;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.project-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.project-links {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+}
+
+.btn-view, .btn-github {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007BFF;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-github {
+    background-color: #333;
+}
+
+.btn-view:hover, .btn-github:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-github:hover {
+    background-color: #222;
+}
+
+.project-card[data-aos="fade-up"] {
+    animation: fadeUpAnimation 1s ease-in-out forwards;
+}
+
+.project-card[data-aos="fade-down"] {
+    animation: fadeDownAnimation 1s ease-in-out forwards;
+}
+
+.project-card[data-aos="fade-left"] {
+    animation: fadeLeftAnimation 1s ease-in-out forwards;
+}
+
+@keyframes fadeUpAnimation {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDownAnimation {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeLeftAnimation {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
