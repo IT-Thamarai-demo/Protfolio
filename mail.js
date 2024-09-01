@@ -193,10 +193,11 @@ document.querySelector("#wei").innerHTML = "Device Width  :" + w + "Px"
 //typing animation
 
 var typed = new Typed('#element', {
-    strings: ['Content Creator 💓 ...' , 'Free Lancer  ...❤️','Web Desinnger  ... 💕'],
+    strings: ['Content Creator 💓...', 'Freelancer ❤️...', 'Web Designer 💕...'],
     typeSpeed: 70,
-    loop:true
-  });
+    loop: true
+});
+
  function vibrare(ms)
   {
      navigator.vibrate(ms)
