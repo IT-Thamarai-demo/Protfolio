@@ -99,7 +99,7 @@ let DF = document.querySelector(".browser");
 if (DF) {
     if (navigator.userAgentData) {
         const deviceName = navigator.userAgentData.brands[0].brand;
-        DF.innerHTML = "Device name: " + deviceName;
+        DF.innerHTML = "Device Name: " + deviceName;
     } else {
         const userAgent = navigator.userAgent;
         const match = userAgent.match(/\((.*?)\)/);
@@ -111,6 +111,7 @@ if (DF) {
         }
     }
 }
+
 
 // Display battery information
 let dis = document.querySelector(".battery");
