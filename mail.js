@@ -1,20 +1,18 @@
-
-Notification.requestPermission().then((res)=>
-{
-    if(res=="granted")
-    {
-      const notification= new Notification("Welcome To My Protfolio 💓",{
-        icon:"IMG-20230719-WA0007.jpg",
-        body:"Haiii 🤍😊💓"
-      })
-      
+// Notification permission and display
+Notification.requestPermission().then((res) => {
+    if (res === "granted") {
+        const notification = new Notification("Welcome To My Portfolio 💓", {
+            icon: "IMG-20230719-WA0007.jpg",
+            body: "Haiii 🤍😊💓"
+        });
     }
-})
+});
+
+// Handle preloader
 function handlePreloader() {
     const loader = document.querySelector('.preloader');
     const content = document.querySelector('.content');
-    
-    // Optional: Add an event listener to load the function after the DOM is fully loaded
+
     window.addEventListener('load', () => {
         setTimeout(() => {
             loader.style.display = 'none';
@@ -26,156 +24,118 @@ function handlePreloader() {
 // Initialize the preloader handler
 handlePreloader();
 
-
-
-
-//your device width and height
-let width = window.innerWidth; // Corrected to get the width of the window
+// Device width and height
+let width = window.innerWidth;
 let height = window.innerHeight;
 
 document.querySelector(".width").textContent = width;
-document.querySelector(".height").textContent = height; // Corrected to target the height element
+document.querySelector(".height").textContent = height;
 
-
-
-// naviagation loggc
-
+// Logging navigation tag
 let tag = document.querySelector("#dan");
 console.log(tag);
-// contact form
-document.querySelector("#c-form").addEventListener("submit", function(e) {
 
+// Contact form submission using Formspree
+document.querySelector("#c-form").addEventListener("submit", function (e) {
     e.preventDefault();
-    let data = new FormData(e.target)
+    let data = new FormData(e.target);
     fetch('https://formspree.io/f/xgeglblo', {
-            method: 'POST',
-            body: data
-        })
-        .then((res) => {
-            if (res.ok) {
-                alert("success")
-                console.log(res);
-            } else {
-                alert("failure")
-            }
-
-        })
+        method: 'POST',
+        body: data
+    })
+    .then((res) => {
+        if (res.ok) {
+            alert("Success");
+            console.log(res);
+        } else {
+            alert("Failure");
+        }
+    });
 });
-let body = document.querySelector("body");
-let btn1 = document.querySelector("#change");
-let icon = document.querySelector(".scroll")
-let text = document.querySelector("#c");
-//toggle background colot
 
+// Toggle background color
 function demo() {
-  let red = Math.floor(Math.random() * 100);
-  let green = Math.floor(Math.random() * 100);
-  let blue = Math.floor(Math.random() * 100);
-  let random = `rgb(${red},${green},${blue})`;
-  console.log(random);
- let body= document.querySelector("body")
- body.style.backgroundColor=random;
+    let red = Math.floor(Math.random() * 100);
+    let green = Math.floor(Math.random() * 100);
+    let blue = Math.floor(Math.random() * 100);
+    let random = `rgb(${red},${green},${blue})`;
+    console.log(random);
+    document.querySelector("body").style.backgroundColor = random;
 }
 
+// Scroll to top functionality
+let icon = document.querySelector(".scroll");
 
-
-
-//loading alert
-// 
-
-function along() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
 window.addEventListener("scroll", () => {
     if (window.scrollY > 100) {
-        icon.classList.add("active")
-
+        icon.classList.add("active");
     } else {
-        icon.classList.remove("active")
+        icon.classList.remove("active");
     }
+});
 
-})
-//get current date
-const date=new Date();
-document.querySelector(".date").textContent = `Today is  ${date.toLocaleDateString()}`
+// Display current date
+const date = new Date();
+document.querySelector(".date").textContent = `Today is ${date.toLocaleDateString()}`;
 
-//openning and closing dialog
-
-function OpenDialog() {
+// Open and close dialog
+function openDialog() {
     tag.showModal();
 }
 
-function CLoseDialog() {
+function closeDialog() {
     tag.close();
 }
 
-//display current time
-
-
-let CT = document.querySelector(".tome")
-
+// Display current time
+let CT = document.querySelector(".time");
 
 setInterval(() => {
     const currentTime = new Date();
-
-    const formattedTime = " Current Time is : " + currentTime.toLocaleTimeString();
-
+    const formattedTime = "Current Time is: " + currentTime.toLocaleTimeString();
     CT.innerHTML = formattedTime;
-
 }, 1000);
 
-
-//dispaly device information
-
+// Display device information
 let DF = document.querySelector(".browser");
+
 if (navigator.userAgentData) {
     const deviceName = navigator.userAgentData.brands[0].brand;
-    DF.innerHTML = " Device name :" + deviceName;
+    DF.innerHTML = "Device name: " + deviceName;
 } else {
-    // Fallback to navigator.userAgent for older browsers
+    // Fallback for older browsers
     const userAgent = navigator.userAgent;
     const match = userAgent.match(/\((.*?)\)/);
     if (match && match.length > 1) {
         const deviceInfo = match[1];
-        DF.innerHTML = " Your Device Name Is :" + deviceInfo;
+        DF.innerHTML = "Your Device Name Is: " + deviceInfo;
     } else {
-        DF.innerHTML = " Unable To Find Device :" + deviceInfo;
+        DF.innerHTML = "Unable to Find Device Info";
     }
 }
 
-
-
-
-//display battety information
+// Display battery information
 let dis = document.querySelector(".battery");
 
-// Check if Battery Status API is supported
 if ('getBattery' in navigator) {
-    navigator.getBattery().then(function(battery) {
-        // Update the battery percentage initially
+    navigator.getBattery().then(function (battery) {
         updateBatteryStatus(battery);
 
-        // Update the battery percentage whenever it changes
-        battery.addEventListener('levelchange', function() {
+        battery.addEventListener('levelchange', function () {
             updateBatteryStatus(battery);
         });
 
         function updateBatteryStatus(battery) {
-            // Get the battery percentage
             const batteryPercentage = battery.level * 100;
-
-            // Display the battery percentage
-            dis.innerHTML = `    Battery Percentage : ${batteryPercentage.toFixed(2)} `;
+            dis.innerHTML = `Battery Percentage: ${batteryPercentage.toFixed(2)}%`;
         }
     });
 } else {
-    dis.innerHTML = " Api is not supported by your battery"
+    dis.innerHTML = "Battery API is not supported by your browser.";
 }
-//    good morning
 
-let goodmorning = document.querySelector(".curremt")
-
+// Greeting based on time of day
+let goodmorning = document.querySelector(".current");
 
 const now = new Date();
 const hour = now.getHours();
@@ -190,46 +150,39 @@ if (hour >= 5 && hour < 12) {
     goodmorning.textContent = "Good night 🌙!";
 }
 
-document.querySelector("#hei").textContent = "Device Height  :" + h + "Px"
-document.querySelector("#wei").innerHTML = "Device Width  :" + w + "Px"
-//typing animation
+// Display corrected device width and height
+document.querySelector("#hei").textContent = "Device Height: " + height + "px";
+document.querySelector("#wei").innerHTML = "Device Width: " + width + "px";
 
+// Typing animation using Typed.js
 var typed = new Typed('#element', {
     strings: ['Content Creator 💓...', 'Freelancer ❤️...', 'Web Designer 💕...'],
     typeSpeed: 70,
     loop: true
 });
 
- function vibrare(ms)
-  {
-     navigator.vibrate(ms)
-  }
-  window.addEventListener('load', function () {
-    const loader = document.querySelector('.preloader');
+// Vibration function
+function vibrate(ms) {
+    navigator.vibrate(ms);
+}
 
-  
-    setTimeout(function () {
-      loader.style.display = 'none';
+// Leaflet map with user location
+let map = L.map('map');
 
-    }, 2000); // Adjust the time as needed
-  });
-  let map = L.map('map');
+if ('geolocation' in navigator) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+        var userLat = position.coords.latitude;
+        var userLng = position.coords.longitude;
 
-        // Initialize the map with user's location
-        if ('geolocation' in navigator) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                var userLat = position.coords.latitude;
-                var userLng = position.coords.longitude;
+        map.setView([userLat, userLng], 15);
 
-                map.setView([userLat, userLng],15);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                }).addTo(map);
-
-                var marker = L.marker([userLat, userLng]).addTo(map);
-                marker.bindPopup("<b>Your Location ❤️</b>").openPopup();
-            });
-        } else {
-            alert('Geolocation is not supported by your browser');
-        }
+        var marker = L.marker([userLat, userLng]).addTo(map);
+        marker.bindPopup("<b>Your Location ❤️</b>").openPopup();
+    });
+} else {
+    alert('Geolocation is not supported by your browser.');
+}
