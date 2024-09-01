@@ -827,100 +827,116 @@ h5 {
     width: 0; /* Start with 0 width */
     transition: width 1s ease-in-out; /* Animate the width */
   }
-.projects-section {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    padding: 2rem;
-    background-color: transparent;
+/* Body background color */
+body {
+    background-color: #f4f4f9; /* Set to your preferred color */
+    font-family: Arial, sans-serif; /* Set a default font */
+    margin: 0;
+    padding: 0;
 }
 
+/* Container for projects */
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #ffffff; /* Matching background color with the container */
+    border-radius: 8px; /* Optional: add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+}
+
+/* Card styling */
 .project-card {
-    background: #fff;
+    background: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.project-details {
+.project-info {
     padding: 1.5rem;
 }
 
 .project-title {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.6rem;
+    font-weight: 600;
     color: #333;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .project-description {
     font-size: 1rem;
-    color: #666;
-    line-height: 1.6;
+    color: #555;
+    line-height: 1.5;
 }
 
-.project-links {
+.project-actions {
     display: flex;
     justify-content: space-between;
-    padding: 1.5rem;
+    padding: 1rem 1.5rem;
     background-color: #fafafa;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #e0e0e0;
 }
 
-.btn-view, .btn-github {
+.btn {
     display: inline-block;
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    background-color: #007BFF;
+    font-weight: 600;
+    color: #ffffff;
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-view {
+    background-color: #007bff;
 }
 
 .btn-github {
     background-color: #333;
 }
 
-.btn-view:hover, .btn-github:hover {
+.btn-view:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
 }
 
 .btn-github:hover {
     background-color: #222;
+    transform: translateY(-2px);
 }
 
 .project-card[data-aos="fade-up"] {
-    animation: fadeUpAnimation 1s ease-in-out forwards;
+    animation: fadeInUp 1s ease-out;
 }
 
 .project-card[data-aos="fade-down"] {
-    animation: fadeDownAnimation 1s ease-in-out forwards;
+    animation: fadeInDown 1s ease-out;
 }
 
 .project-card[data-aos="fade-left"] {
-    animation: fadeLeftAnimation 1s ease-in-out forwards;
+    animation: fadeInLeft 1s ease-out;
 }
 
-@keyframes fadeUpAnimation {
+@keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeDownAnimation {
+@keyframes fadeInDown {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeLeftAnimation {
+@keyframes fadeInLeft {
     from { opacity: 0; transform: translateX(-20px); }
     to { opacity: 1; transform: translateX(0); }
 }
