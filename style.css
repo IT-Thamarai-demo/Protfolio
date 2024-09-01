@@ -412,13 +412,7 @@ h1 {
     .load {
         display: none;
     }
-    #map {
-        height: 300px;
-        width: 300px;
-       position: absolute;
-       right: 0%;
-    }
-    ul
+
     {
         flex-direction:column;
     }
