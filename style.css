@@ -832,12 +832,6 @@ h5 {
     transition: width 1s ease-in-out; /* Animate the width */
   }
 /* Body background color */
-body {
-    background-color: #f4f4f9; /* Set to your preferred color */
-    font-family: Arial, sans-serif; /* Set a default font */
-    margin: 0;
-    padding: 0;
-}
 
 /* Container for projects */
 .projects-container {
