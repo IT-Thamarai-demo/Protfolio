@@ -210,6 +210,9 @@ let tag = document.querySelector("#myDialog");
             } else {
                 alert("Vibration not supported on this device.");
             }
+
+    }
+
 document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "hidden") {
         Notification.requestPermission().then((res) => {
@@ -224,5 +227,3 @@ document.addEventListener("visibilitychange", () => {
                 };
             }
         });
-    }
-});
