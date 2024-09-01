@@ -34,7 +34,7 @@ if (widthElement) widthElement.textContent = width;
 if (heightElement) heightElement.textContent = height;
 
 // Logging navigation tag
-let tag = document.querySelector("#Thams");
+let tag = document.querySelector("#myDialog");
 console.log(tag);
 
 // Contact form submission using Formspree
