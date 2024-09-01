@@ -152,7 +152,7 @@ let heiElement = document.querySelector("#hei");
 if (heiElement) heiElement.textContent = "Device Height: " + height + "px";
 
 let weiElement = document.querySelector("#wei");
-if (weiElement) weiElement.innerHTML = "Device Width: " + width + "px";
+if (weiElement) weiElement.textContent = "Device Width: " + width + "px";
 
 // Typing animation using Typed.js
 var typed = new Typed('#element', {
