@@ -30,8 +30,8 @@ let height = window.innerHeight;
 let widthElement = document.querySelector(".width");
 let heightElement = document.querySelector(".height");
 
-if (widthElement) widthElement.textContent = width + "px";
-if (heightElement) heightElement.textContent = height + "px";
+if (widthElement) widthElement.textContent = "Device Width" + width + "px";
+if (heightElement) heightElement.textContent = "Device Height" +  height + "px";
 
 // Contact form submission using Formspree
 document.querySelector("#c-form").addEventListener("submit", function (e) {
