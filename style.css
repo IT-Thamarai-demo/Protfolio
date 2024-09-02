@@ -381,6 +381,7 @@ h1 {
     .menu menu-3
     {
         padding:3px;
+        flex-direction: column;
     }
     main {
         flex-direction: column;
@@ -427,7 +428,7 @@ h1 {
         height: 300px;
         width: 300px;
        position: absolute;
-       right:107px;
+       right:140px;
     }
     .download-btn {
         position: absolute;
