@@ -831,7 +831,7 @@ nav ul {
     gap: 20px;
     padding: 0;
     margin: 0;
-    font-size: 25px;
+    font-size: 24px;
 }
 
 nav ul li {
@@ -841,7 +841,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    font-size: 3rem;
+    font-size: 2rem;
     color: snow;
     padding: 5px 0;
     transition: color 0.3s ease;
