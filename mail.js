@@ -39,6 +39,7 @@ document.querySelector("#c-form").addEventListener("submit", function (e) {
     let data = new FormData(e.target);
     fetch('https://formspree.io/f/xgeglblo', {
         method: 'POST',
+         mode: 'no-cors',
         body: data
     })
     .then((res) => {
