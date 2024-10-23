@@ -45,6 +45,7 @@ document.querySelector("#c-form").addEventListener("submit", function (e) {
         if (res.ok) {
             alert("Success");
             console.log(res);
+             setTimeout(launchConfetti, 600);
         } else {
             alert("Failure");
         }
@@ -222,3 +223,32 @@ function along() {
         behavior: 'smooth'
     });
 }
+function launchConfetti() {
+            const duration = 5 * 1000; // 5 seconds duration
+            const animationEnd = Date.now() + duration;
+            const defaults = { 
+                startVelocity: 30, 
+                spread: 360, 
+                ticks: 60, 
+                zIndex: 9999, // Bring confetti to the top
+                scalar: 2  // Increase the size of the particles
+            };
+
+            const interval = setInterval(function () {
+                const timeLeft = animationEnd - Date.now();
+
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                }
+
+                // Create a burst of confetti from random positions around the screen
+                confetti(Object.assign({}, defaults, {
+                    particleCount: 100, // Increase particle count for a more intense effect
+                    spread: 360,        // Full circle spread
+                    origin: {
+                        x: Math.random(),  // Random horizontal position
+                        y: Math.random()   // Random vertical position
+                    }
+                }));
+            }, 250); // Launch confetti every 250 milliseconds
+        }
