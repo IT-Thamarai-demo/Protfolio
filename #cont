@@ -267,7 +267,7 @@ section {
     display: flex;
     flex-direction: column;
     margin-top: -1em;
-    border: 5px solid white;
+
     border-radius: 10px ;
 }
 
@@ -296,7 +296,7 @@ footer {
     justify-content: space-evenly;
     height: 60px;
     width: 100%;
-    margin-top: -5%;
+    margin-top: 7%;
     text-align: center;
     /* background-color: blue; */
 }
@@ -451,9 +451,8 @@ h1 {
     }
   
     .download-btn {
-        position: absolute;
-        left: 25%;
-        bottom: -332px;
+       top:180%;
+       left:-252px;
     }
     .edit
     {
