@@ -225,7 +225,7 @@ function along() {
     });
 }
 function launchConfetti() {
-            const duration = 5 * 1000; // 5 seconds duration
+            const duration = 2 * 1000; // 5 seconds duration
             const animationEnd = Date.now() + duration;
             const defaults = { 
                 startVelocity: 30, 
