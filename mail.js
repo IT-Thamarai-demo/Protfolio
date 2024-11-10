@@ -253,3 +253,120 @@ function launchConfetti() {
                 }));
             }, 250); // Launch confetti every 250 milliseconds
         }
+
+// Import GSAP and ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+// Header Animation
+gsap.from("header", {
+  opacity: 0,
+  y: -50,
+  duration: 1.5,
+  ease: "power2.out",
+});
+
+// Brand Name Animation
+gsap.from("#brand-name h3", {
+  opacity: 0,
+  y: -20,
+  duration: 1,
+  delay: 0.5,
+  ease: "back.out(1.7)"
+});
+
+// Nav Links Animation
+gsap.from("header nav ul li", {
+  opacity: 0,
+  y: 20,
+  stagger: 0.2,
+  duration: 1,
+  delay: 1,
+  ease: "power2.out",
+});
+
+// Button Animation
+gsap.from(".edit button", {
+  opacity: 0,
+  scale: 0.8,
+  stagger: 0.2,
+  duration: 1,
+  delay: 1.2,
+  ease: "power2.out"
+});
+
+// About Section Animation
+gsap.from("#small", {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  delay: 0.5,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: "#small",
+    start: "top 75%",
+  },
+});
+
+// Profile Image Animation
+gsap.from(".pic img", {
+  opacity: 0,
+  scale: 0.8,
+  duration: 1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".pic img",
+    start: "top 80%",
+  },
+});
+
+// Skills Section Animation
+gsap.from("#skills .card", {
+  opacity: 0,
+  y: 30,
+  duration: 1,
+  stagger: 0.2,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: "#skills",
+    start: "top 80%",
+  },
+});
+
+// Projects Section Animation
+gsap.from(".project-card", {
+  opacity: 0,
+  x: -50,
+  duration: 1,
+  stagger: 0.3,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".projects-container",
+    start: "top 85%",
+  },
+});
+
+// Contact Us Section Animation
+gsap.from("#contactus form", {
+  opacity: 0,
+  y: 30,
+  duration: 1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: "#contactus",
+    start: "top 80%",
+  },
+});
+
+// Footer Icons Animation
+gsap.from("footer .col", {
+  opacity: 0,
+  y: 20,
+  duration: 1,
+  stagger: 0.2,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: "footer",
+    start: "top 90%",
+  },
+});
+
