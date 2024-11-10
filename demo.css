@@ -24,6 +24,7 @@ header {
     position: sticky;
     top: 0; /* Add this to make it sticky */
     z-index: 1000;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(57,57,255,1) 74%, rgba(0,212,255,1) 100%);
 }
 
 @keyframes re {
