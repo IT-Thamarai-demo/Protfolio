@@ -22,8 +22,9 @@ header {
     text-align: center;
     font-size: 20px;
     animation: re 5s infinite;
-    position:sticky;
-    z-index:1000;
+    position: sticky;
+    top: 0; /* Add this to make it sticky */
+    z-index: 1000;
 }
 
 @keyframes re {
