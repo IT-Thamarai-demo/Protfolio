@@ -244,5 +244,68 @@ function launchConfetti() {
             }, 250); // Launch confetti every 250 milliseconds
         }
 
-/
+<script>
+  particlesJS('particles-js', {
+    particles: {
+      number: {
+        value: 100,      // Number of particles
+        density: {
+          enable: true,   // Density of particles
+          value_area: 800 // Area within which particles appear
+        }
+      },
+      shape: {
+        type: 'circle',  // Shape of the particles (circle, edge, etc.)
+        stroke: {
+          width: 0,       // Particle border width
+          color: '#000'   // Border color
+        }
+      },
+      opacity: {
+        value: 0.5,      // Opacity of particles
+        random: true,    // Whether opacity should be random
+        anim: {
+          enable: true,   // Enable animation of opacity
+          speed: 1,       // Animation speed
+          opacity_min: 0.1 // Minimum opacity during animation
+        }
+      },
+      size: {
+        value: 3,        // Size of particles
+        random: true,    // Random particle size
+        anim: {
+          enable: true,   // Enable size animation
+          speed: 40,      // Animation speed
+          size_min: 0.1   // Minimum size during animation
+        }
+      },
+      links: {
+        enable: true,    // Enable links between particles
+        distance: 150,   // Maximum distance for links
+        color: '#ffffff' // Link color
+      },
+      move: {
+        enable: true,    // Enable movement of particles
+        speed: 2,        // Movement speed
+        direction: 'none',
+        random: true,    // Random movement direction
+        straight: false, // Allow particles to move in a straight line
+        out_mode: 'out'  // Particles move out of bounds when they go beyond the container
+      }
+    },
+    interactivity: {
+      events: {
+        onhover: {
+          enable: true,  // Enable hover interaction
+          mode: 'repulse' // Repulse particles when hovering over them
+        },
+        onclick: {
+          enable: true,  // Enable click interaction
+          mode: 'push'   // Add particles on click
+        }
+      }
+    }
+  });
+</script>
+
 
