@@ -10,17 +10,6 @@ Notification.requestPermission().then((res) => {
 
 // Handle preloader
 
-function handlePreloader() {
-    const loader = document.querySelector('.preloader');
-    const content = document.querySelector('.content');
-
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            if (loader) loader.style.display = 'none';
-            if (content) content.style.display = 'block';
-        }, 2000); // Adjust the delay as needed
-    });
-}
 
 handlePreloader();
 
