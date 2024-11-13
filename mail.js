@@ -9,6 +9,7 @@ Notification.requestPermission().then((res) => {
 });
 
 // Handle preloader
+
 function handlePreloader() {
     const loader = document.querySelector('.preloader');
     const content = document.querySelector('.content');
