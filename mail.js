@@ -9,8 +9,6 @@ Notification.requestPermission().then((res) => {
 });
 
 // Handle preloader
-
-
 handlePreloader();
 
 // Device width and height
@@ -20,8 +18,8 @@ let height = window.innerHeight;
 let widthElement = document.querySelector(".width");
 let heightElement = document.querySelector(".height");
 
-if (widthElement) widthElement.textContent = "Device Width" + width + "px";
-if (heightElement) heightElement.textContent = "Device Height" +  height + "px";
+if (widthElement) widthElement.textContent = "Device Width: " + width + "px";
+if (heightElement) heightElement.textContent = "Device Height: " + height + "px";
 
 // Contact form submission using Formspree
 document.querySelector("#c-form").addEventListener("submit", function (e) {
@@ -29,14 +27,13 @@ document.querySelector("#c-form").addEventListener("submit", function (e) {
     let data = new FormData(e.target);
     fetch('https://formspree.io/f/xgeglblo', {
         method: 'POST',
-         mode: 'no-cors',
+        mode: 'no-cors',
         body: data
     })
     .then((res) => {
         if (res.ok) {
             alert("Success");
-            console.log(res);
-             setTimeout(launchConfetti, 600);
+            setTimeout(launchConfetti, 600);
         } else {
             alert("Failure");
         }
@@ -49,7 +46,6 @@ function demo() {
     let green = Math.floor(Math.random() * 100);
     let blue = Math.floor(Math.random() * 100);
     let random = `rgb(${red},${green},${blue})`;
-    console.log(random);
     document.querySelector("body").style.backgroundColor = random;
 }
 
@@ -194,10 +190,8 @@ function closepop() {
 document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
         console.log("Tab is hidden");
-        // You can add code here to pause certain actions, etc.
     } else {
         console.log("Tab is visible");
-        // You can add code here to resume actions, etc.
         Notification.requestPermission().then((res) => {
             if (res === "granted") {
                 const notification = new Notification("Welcome back to the page!", {
@@ -208,104 +202,104 @@ document.addEventListener('visibilitychange', function () {
         });
     }
 });
+
+// Scroll to top functionality
 function along() {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
     });
 }
+
+// Confetti launch function
 function launchConfetti() {
-            const duration = 2 * 1000; // 5 seconds duration
-            const animationEnd = Date.now() + duration;
-            const defaults = { 
-                startVelocity: 30, 
-                spread: 360, 
-                ticks: 60, 
-                zIndex: 9999, // Bring confetti to the top
-                scalar: 2  // Increase the size of the particles
-            };
+    const duration = 2 * 1000;
+    const animationEnd = Date.now() + duration;
+    const defaults = {
+        startVelocity: 30,
+        spread: 360,
+        ticks: 60,
+        zIndex: 9999,
+        scalar: 2
+    };
 
-            const interval = setInterval(function () {
-                const timeLeft = animationEnd - Date.now();
+    const interval = setInterval(function () {
+        const timeLeft = animationEnd - Date.now();
 
-                if (timeLeft <= 0) {
-                    clearInterval(interval);
-                }
-
-                // Create a burst of confetti from random positions around the screen
-                confetti(Object.assign({}, defaults, {
-                    particleCount: 100, // Increase particle count for a more intense effect
-                    spread: 360,        // Full circle spread
-                    origin: {
-                        x: Math.random(),  // Random horizontal position
-                        y: Math.random()   // Random vertical position
-                    }
-                }));
-            }, 250); // Launch confetti every 250 milliseconds
+        if (timeLeft <= 0) {
+            clearInterval(interval);
         }
 
-<script>
-  particlesJS('particles-js', {
+        confetti(Object.assign({}, defaults, {
+            particleCount: 100,
+            spread: 360,
+            origin: {
+                x: Math.random(),
+                y: Math.random()
+            }
+        }));
+    }, 250);
+}
+
+// Particle.js setup
+particlesJS('particles-js', {
     particles: {
-      number: {
-        value: 100,      // Number of particles
-        density: {
-          enable: true,   // Density of particles
-          value_area: 800 // Area within which particles appear
+        number: {
+            value: 100,
+            density: {
+                enable: true,
+                value_area: 800
+            }
+        },
+        shape: {
+            type: 'circle',
+            stroke: {
+                width: 0,
+                color: '#000'
+            }
+        },
+        opacity: {
+            value: 0.5,
+            random: true,
+            anim: {
+                enable: true,
+                speed: 1,
+                opacity_min: 0.1
+            }
+        },
+        size: {
+            value: 3,
+            random: true,
+            anim: {
+                enable: true,
+                speed: 40,
+                size_min: 0.1
+            }
+        },
+        links: {
+            enable: true,
+            distance: 150,
+            color: '#ffffff'
+        },
+        move: {
+            enable: true,
+            speed: 2,
+            direction: 'none',
+            random: true,
+            straight: false,
+            out_mode: 'out'
         }
-      },
-      shape: {
-        type: 'circle',  // Shape of the particles (circle, edge, etc.)
-        stroke: {
-          width: 0,       // Particle border width
-          color: '#000'   // Border color
-        }
-      },
-      opacity: {
-        value: 0.5,      // Opacity of particles
-        random: true,    // Whether opacity should be random
-        anim: {
-          enable: true,   // Enable animation of opacity
-          speed: 1,       // Animation speed
-          opacity_min: 0.1 // Minimum opacity during animation
-        }
-      },
-      size: {
-        value: 3,        // Size of particles
-        random: true,    // Random particle size
-        anim: {
-          enable: true,   // Enable size animation
-          speed: 40,      // Animation speed
-          size_min: 0.1   // Minimum size during animation
-        }
-      },
-      links: {
-        enable: true,    // Enable links between particles
-        distance: 150,   // Maximum distance for links
-        color: '#ffffff' // Link color
-      },
-      move: {
-        enable: true,    // Enable movement of particles
-        speed: 2,        // Movement speed
-        direction: 'none',
-        random: true,    // Random movement direction
-        straight: false, // Allow particles to move in a straight line
-        out_mode: 'out'  // Particles move out of bounds when they go beyond the container
-      }
     },
     interactivity: {
-      events: {
-        onhover: {
-          enable: true,  // Enable hover interaction
-          mode: 'repulse' // Repulse particles when hovering over them
-        },
-        onclick: {
-          enable: true,  // Enable click interaction
-          mode: 'push'   // Add particles on click
+        events: {
+            onhover: {
+                enable: true,
+                mode: 'repulse'
+            },
+            onclick: {
+                enable: true,
+                mode: 'push'
+            }
         }
-      }
     }
-  });
-</script>
-
-
+});
