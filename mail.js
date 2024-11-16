@@ -9,7 +9,7 @@ Notification.requestPermission().then((res) => {
 });
 
 // Handle preloader
-handlePreloader();
+
 
 // Device width and height
 let width = window.innerWidth;
