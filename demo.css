@@ -914,4 +914,31 @@ nav ul li a:hover {
       z-index: -1;
       background-color: black;
     }
+ footer {
+            background-color: #f8f9fa; /* Light background */
+            color: #333; /* Text color */
+            text-align: center; /* Center text */
+            padding: 15px 0; /* Vertical padding */
+            position: fixed; /* Fix footer to the bottom */
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            border-top: 1px solid #ddd; /* Subtle top border */
+        }
+
+        footer p {
+            margin: 0; /* Remove margin around text */
+            font-size: 14px; /* Font size */
+        }
+
+        footer strong {
+            font-weight: bold; /* Make the name bold */
+        }
+
+        /* Responsive for small screens */
+        @media (max-width: 600px) {
+            footer {
+                padding: 10px 0;
+            }
+        }
 
