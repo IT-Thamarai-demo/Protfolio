@@ -450,9 +450,9 @@ h1 {
         flex-direction:column;
     }
   
-    .download-btn {
-       top:169%;
-       left:-252px;
+       .download-btn {
+        top: 183%;
+        left: -271px;
     }
     .edit
     {
