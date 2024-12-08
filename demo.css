@@ -147,6 +147,7 @@ main {
 
 .small p {
     font-size: 20px;
+    text-align: justify
 }
 
 
@@ -209,6 +210,7 @@ section {
     font-size: 16px;
     color:snow;
     margin-bottom: 20px;
+    text-align: justify;
 }
 
 .card small {
@@ -414,6 +416,7 @@ h1 {
     }
     #small p {
         font-size: 16px;
+        text-align: justify;
     }
     #skills,
     #contactus {
@@ -538,6 +541,7 @@ h4,
 h5 {
     text-align: center;
     text-wrap: nowrap;
+    text-align: justify
 }
 
 
@@ -690,6 +694,7 @@ h5 {
 .project-description {
     font-size: 1rem;
     color:snow;
+    text-align: justify
 }
 
 .project-actions {
@@ -770,6 +775,7 @@ h5 {
         width: 90%;
         margin-bottom: 20px;
         animation: fadeInUp 0.5s ease-in-out;
+        text-align: justify;
     }
 
     .project-card[data-aos="fade-down"] {
